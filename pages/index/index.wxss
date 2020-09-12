@@ -1,0 +1,35 @@
+.home {
+  height: 100%;
+}
+.home .swiper {
+  width: 100%;
+  height: 200px;
+}
+.home .swiper .slide-image {
+  width: 100%;
+}
+.home .card {
+  padding: 0 12px;
+  margin: 10px 0 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.home .card .item {
+  width: calc(50% - 5px);
+  height: 150px;
+  line-height: 150px;
+  display: flex;
+  justify-content: space-between;
+  background: #FFFFFF;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+.home .card .item:nth-child(2n + 1) {
+  margin-right: 10px;
+}
+.home .van-notice-bar {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,23 @@
+<view class="month-table">
+
+  <view>
+    <van-field class="not-padding" label="填报日期" value="{{ form.date }}" placeholder="请选择填报日期" readonly clickable is-link border="{{ false }}" bindtap="showDate" />
+
+    <view class="title">XX月垃圾收集情况</view>
+    <view class="card">
+      <van-field title-width="130px" label="厨余垃圾:" type="number" model:value="{{ form.a }}" placeholder="请输入管理工作会议次数" border="{{ false }}" />
+      <van-field title-width="130px" label="可回收物:" type="number" model:value="{{ form.b }}" placeholder="请输入主要/主管领导" border="{{ false }}" />
+      <van-field title-width="130px" label="有害垃圾:" type="textarea" model:value="{{ form.c }}" placeholder="请输入具体事项" border="{{ false }}" />
+      <van-field title-width="130px" label="其他垃圾:" type="textarea" model:value="{{ form.c }}" placeholder="请输入具体事项" border="{{ false }}" />
+      <van-field title-width="130px" label="合计:" type="textarea" model:value="{{ form.c }}" placeholder="请输入具体事项" border="{{ false }}" />
+    </view>
+  </view>
+
+  <van-popup show="{{ show.date }}" position="bottom" custom-style="height: 50%" bind:close="close">
+    <van-datetime-picker type="date" value="{{ form.date }}" title="请选择填报日期" bind:confirm="dateConfirm" bind:cancel="dateClose" />
+  </van-popup>
+
+  <view class="footer">
+    <van-button type="info" bindtap="next">提交</van-button>
+  </view>
+</view>

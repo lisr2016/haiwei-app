@@ -1,0 +1,10 @@
+.login .image {
+  width: 100%;
+  height: 200px;
+}
+.login .title {
+  width: 100%;
+  margin: 25px 0;
+  text-align: center;
+  font-size: 22px;
+}

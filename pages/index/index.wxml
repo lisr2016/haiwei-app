@@ -1,0 +1,18 @@
+<view class="home">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+    <block wx:for="{{ movies }}" wx:key="index">
+      <swiper-item class="swiper-item">
+        <image src="{{ item.url }}" class="slide-image" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="card">
+    <view wx:for="{{ card }}" wx:key="index" class="item" bindtap="jump" data-currentData="{{ item }}">
+      <text>{{ item.label }}</text>
+      <van-icon name="plus" />
+    </view>
+  </view>
+  <view wx:for="{{ message }}" wx:key="index">
+    <van-notice-bar color="#1989fa" background="#ecf9ff" left-icon="info-o" text="{{ item.text }}" />
+  </view>
+</view>

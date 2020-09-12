@@ -1,0 +1,12 @@
+<view class="quantify-table">
+  量化报表
+  <view class="chart">
+    <ec-canvas id="my-chart" canvas-id="my-chart-line" ec="{{ line }}" />
+  </view>
+  <view class="chart">
+    <ec-canvas id="my-chart" canvas-id="my-chart-bar" ec="{{ bar }}" />
+  </view>
+  <view class="chart">
+    <ec-canvas id="my-chart" canvas-id="my-chart-pie" ec="{{ pie }}" />
+  </view>
+</view>

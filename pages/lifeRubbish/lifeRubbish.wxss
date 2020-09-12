@@ -1,0 +1,6 @@
+.life-rubbish {
+  height: 100%;
+}
+.life-rubbish .van-tabs {
+  margin-bottom: 10px;
+}

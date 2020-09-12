@@ -1,0 +1,20 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/CreatedAssessment/CreatedAssessment",
+    "pages/Reporting/Reporting",
+    "pages/QuantifyTable/QuantifyTable",
+    "pages/AssessmentTemplate/AssessmentTemplate",
+    "pages/ResetPassword/ResetPassword",
+    "pages/Login/Login",
+    "pages/medicineRubbish/medicineRubbish",
+    "pages/lifeRubbish/lifeRubbish"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle":"black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

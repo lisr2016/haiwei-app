@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "day-table": "../../components/day-table/day-table",
+    "week-table": "../../components/week-table/week",
+    "month-table": "../../components/month-table/month",
+    "van-tab": "/miniprogram_npm/@vant/weapp/tab/index",
+    "van-tabs": "/miniprogram_npm/@vant/weapp/tabs/index"
+  },
+  "navigationBarTitleText": "生活垃圾-日报"
+}

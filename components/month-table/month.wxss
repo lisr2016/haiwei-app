@@ -1,0 +1,41 @@
+.month-table {
+  height: calc(100% - 40px);
+  position: relative;
+}
+.month-table .title {
+  height: 50px;
+  line-height: 50px;
+  color: #999999;
+  padding-left: 15px;
+}
+.month-table .card {
+  margin: 0 12px;
+  width: calc(100% - 24px);
+  border-radius: 6px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  padding: 12px 0;
+}
+.month-table .card .switch {
+  display: flex;
+}
+.month-table .card .switch .label {
+  width: 130px;
+  padding-left: 15px;
+  font-size: 14px;
+  color: #666;
+  margin-right: 15px;
+}
+.month-table .not-padding /deep/ .van-cell {
+  padding: 10px 0;
+}
+.month-table .footer {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  padding: 3px 12px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  bottom: 20px;
+  left: 0;
+}

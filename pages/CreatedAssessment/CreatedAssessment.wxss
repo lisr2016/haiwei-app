@@ -1,0 +1,33 @@
+.created-assessment .title {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 12px;
+}
+.created-assessment .group {
+  padding: 0 12px;
+  height: 50px;
+  line-height: 50px;
+  display: flex;
+  justify-content: flex-start;
+}
+.created-assessment .group .radio {
+  width: 50%;
+  position: relative;
+}
+.created-assessment .group .radio .van-radio {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.created-assessment .van-button {
+  margin: 40px auto;
+  display: block;
+  width: 160px;
+  line-height: 44px;
+  border-radius: 6px;
+}
+.created-assessment .divider {
+  height: 5px;
+  width: 100%;
+  background: #EEEEEE;
+}

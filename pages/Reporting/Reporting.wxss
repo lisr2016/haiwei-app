@@ -1,0 +1,33 @@
+.reporting-box .title {
+  height: 50px;
+  line-height: 50px;
+  padding: 0 12px;
+}
+.reporting-box .card {
+  margin: 0 12px;
+  width: calc(100% - 24px);
+  padding: 12px 0;
+  box-sizing: border-box;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.reporting-box .footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  z-index: 100;
+  border-top: 1px solid #EEEEEE;
+}
+.reporting-box .footer .van-button {
+  width: 120px;
+  margin: 3px 20px 3px 0;
+  height: 44px;
+}
+.reporting-box .box {
+  height: 60px;
+  width: 100%;
+}

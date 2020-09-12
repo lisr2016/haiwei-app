@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
+    "van-notice-bar": "/miniprogram_npm/@vant/weapp/notice-bar/index"
+  },
+  "navigationBarTitleText": "海卫后勤系统"
+}

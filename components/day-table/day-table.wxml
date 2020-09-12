@@ -1,0 +1,65 @@
+<view class="day-table">
+
+  <view hidden="{{ active !== 0 }}">
+    <van-field class="not-padding" label="填报日期" value="{{ form.date }}" placeholder="请选择填报日期" readonly clickable is-link border="{{ false }}" bindtap="showDate" />
+
+    <view class="title">生活垃圾分类管理工作会议</view>
+    <view class="card">
+      <van-field title-width="130px" label="管理工作会议次数:" type="number" model:value="{{ form.a }}" placeholder="请输入管理工作会议次数" border="{{ false }}" />
+      <van-field title-width="130px" label="会议主持人:" type="number" model:value="{{ form.b }}" placeholder="请输入主要/主管领导" border="{{ false }}" />
+      <van-field title-width="130px" label="具体事项:" type="textarea" model:value="{{ form.c }}" placeholder="请输入具体事项" border="{{ false }}" />
+    </view>
+  </view>
+
+  <view hidden="{{ active !== 1 }}">
+    <view class="title">生活垃圾分类管理</view>
+    <view class="card">
+      <van-field title-width="130px" label="自测、巡查次数:" type="number" model:value="{{ form.d }}" placeholder="请输入自测、巡查次数" border="{{ false }}" />
+      <van-field title-width="130px" label="发现存在问题:" type="number" model:value="{{ form.e }}" placeholder="请输入发现存在问题次数" border="{{ false }}" />
+      <van-field title-width="130px" label="主要涉及问题:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
+      <view class="switch">
+        <view class="label">是否整改到位</view>
+        <van-switch checked="{{ checked }}" size="20px" bind:change="onChange" />
+      </view>
+    </view>
+  </view>
+
+  <view hidden="{{ active !== 2 }}">
+    <view class="title">生活垃圾分类宣传</view>
+    <view class="card">
+      <van-field title-width="130px" label="宣传次数:" type="number" model:value="{{ form.d }}" placeholder="请输入宣传次数" border="{{ false }}" />
+      <van-field title-width="130px" label="宣传方式:" type="number" model:value="{{ form.e }}" placeholder="请输入发现存在问题次数" border="{{ false }}" />
+    </view>
+  </view>
+
+  <view hidden="{{ active !== 3 }}">
+    <view class="title">生活垃圾分类培训</view>
+    <view class="card">
+      <van-field title-width="130px" label="培训次数:" type="number" model:value="{{ form.d }}" placeholder="请输入培训次数" border="{{ false }}" />
+      <van-field title-width="130px" label="培训人数:" type="number" model:value="{{ form.e }}" placeholder="请输入培训人数" border="{{ false }}" />
+      <van-field title-width="130px" label="主要培训内容:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要培训内容" border="{{ false }}" />
+    </view>
+  </view>
+
+  <view hidden="{{ active !== 4 }}">
+    <view class="title">配合相关部门、属地政府开展检查</view>
+    <view class="card">
+      <van-field title-width="130px" label="开展检查次数:" type="number" model:value="{{ form.d }}" placeholder="请输入开展检查次数" border="{{ false }}" />
+      <van-field title-width="130px" label="发现存在问题个数:" type="number" model:value="{{ form.e }}" placeholder="请输入发现存在问题次数" border="{{ false }}" />
+      <van-field title-width="130px" label="主要涉及问题:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
+      <view class="switch">
+        <view class="label">是否整改到位</view>
+        <van-switch checked="{{ checked }}" size="20px" bind:change="onChange" />
+      </view>
+    </view>
+  </view>
+
+  <van-popup show="{{ show.date }}" position="bottom" custom-style="height: 50%" bind:close="close">
+    <van-datetime-picker type="date" value="{{ form.date }}" title="请选择填报日期" bind:confirm="dateConfirm" bind:cancel="dateClose" />
+  </van-popup>
+
+  <view class="footer">
+    <van-button type="info" bindtap="up" disabled="{{ active === 0 }}">上一步</van-button>
+    <van-button type="info" bindtap="next">{{ active === 4 ? '提交' : '下一步'}}</van-button>
+  </view>
+</view>
