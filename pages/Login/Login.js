@@ -35,7 +35,7 @@ Page({
   },
   // 获取验证码
   getCode() {
-    ajax(`${baseUrl}/get/VerifyCode`, { phone: this.data.form.phone }).then(() => {
+    ajax(`${baseUrl}/get/verifyCode`, { phone: this.data.form.phone }).then(() => {
       Toast.success('验证码已发送至您手机，请注意查收');
     })
   },
@@ -45,7 +45,7 @@ Page({
     const value = e.detail.value;
     this.setData({ [`form.${inputModel}`]: value })
     if (inputModel === 'code') {
-      ajax(`${baseUrl}/check/VerifyCode`, { phone: this.data.form.phone, verifyCode: e.detail.value }).then(() => {
+      ajax(`${baseUrl}/check/verifyCode`, { phone: this.data.form.phone, verifyCode: e.detail.value }).then(() => {
         this.setData({ isCheck: true })
       })
     }
