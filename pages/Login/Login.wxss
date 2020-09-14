@@ -8,3 +8,42 @@
   text-align: center;
   font-size: 22px;
 }
+.login .item .field-index--van-field {
+  padding: var(--cell-vertical-padding, 15px) var(--cell-horizontal-padding, 30px);
+}
+.login .item .cell-index--van-cell__left-icon {
+  font-size: 30px;
+}
+.login .item .van-field__input {
+  padding-left: 20px;
+  font-size: 15px;
+}
+.login .item .van-cell::after {
+  left: 25px;
+  right: 25px;
+}
+.login .login-btn .van-button {
+  margin-top: 20px;
+  height: 40px;
+  width: 90%;
+}
+.login .bottom {
+  width: 90%;
+  margin: 30px auto 0;
+}
+.login .bottom .van-switch {
+  float: left;
+}
+.login .bottom text {
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  font-size: 15px;
+  float: left;
+  margin-left: 10px;
+}
+.login .reset {
+  float: right !important;
+  margin-right: 10px;
+  color: #1989FA;
+}

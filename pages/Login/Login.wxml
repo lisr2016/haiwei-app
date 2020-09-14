@@ -1,7 +1,46 @@
 <view class="login">
   <image class="image" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599726004020&di=aea7ff8250bd817b22eb7fc961abd724&imgtype=0&src=http%3A%2F%2Ft8.baidu.com%2Fit%2Fu%3D1484500186%2C1503043093%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D1280%26h%3D853" />
   <view class="title">欢迎登录</view>
-  <view class="input">
-    <van-field model:value="{{ form.phone }}" placeholder="请输入手机号" border="{{ false }}" />
+  <van-cell-group>
+    <van-field
+      value="{{ form.phone }}"
+      clearable
+      left-icon	= "phone-circle-o"
+      placeholder="请输入手机号"
+      maxlength="11"
+      bind:blur="input"
+      data-name="phone"
+      class="item"
+    />
+    <van-field
+      value="{{ form.password }}"
+      type="{{ isClosed ? 'password' : 'text' }}"
+      left-icon="browsing-history-o"
+      right-icon="{{ isClosed ? 'closed-eye' : 'eye-o' }}"
+      placeholder="请输入密码"
+      bind:blur="input"
+      data-name="password"
+      class="item"
+      bind:click-icon="clickIcon"
+    />
+    <van-field
+      value="{{ form.verifyCode }}"
+      type="text"
+      left-icon	= "browsing-history-o"
+      placeholder="请输入验证码"
+      class="item"
+      bind:blur="input"
+      data-name="verifyCode"
+      use-button-slot
+    >
+      <van-button slot="button" size="small" type="default" bindtap="getCode">发送验证码</van-button>
+    </van-field>
+  </van-cell-group>
+  <van-button type="info" round size="large" block class='login-btn' bindtap="login">登录</van-button>
+  <view class="bottom">
+    <van-switch checked="{{ checked }}" size="24px" bind:change="onChange" active-color="#1989FA"/>
+    <text>记住密码</text>
+    <text class="reset" bindtap="jump">重置密码</text>
   </view>
+  <van-toast id="van-toast" />
 </view>

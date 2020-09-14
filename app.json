@@ -1,12 +1,12 @@
 {
   "pages":[
+    "pages/Login/Login",
     "pages/index/index",
     "pages/CreatedAssessment/CreatedAssessment",
     "pages/Reporting/Reporting",
     "pages/QuantifyTable/QuantifyTable",
     "pages/AssessmentTemplate/AssessmentTemplate",
     "pages/ResetPassword/ResetPassword",
-    "pages/Login/Login",
     "pages/medicineRubbish/medicineRubbish",
     "pages/lifeRubbish/lifeRubbish"
   ],
