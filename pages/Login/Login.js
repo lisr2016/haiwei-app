@@ -45,9 +45,22 @@ Page({
   input(e) {
     const inputModel = e.currentTarget.dataset.name;
     const value = e.detail.value;
-    this.setData({ [`form.${inputModel}`]: value })
-    if (inputModel === 'verifyCode' && value) {
-      ajax('/check/verifyCode', { phone: this.data.form.phone, verifyCode: e.detail.value }, 'get', false, { cookie: wx.getStorageSync("sessionid") }).then(() => {
+    console.log(value)
+    const type = e.currentTarget.dataset.type
+    const re = /^[0-9]+.?[0-9]*/;
+    if (type === 'number') {
+      if (re.test(value)) {
+        this.setData({ [`form.${inputModel}`]: value });
+      } else {
+        Toast({ type: 'fail', context: this, message: '请输入数字内容！' })
+      }
+    } else {
+      this.setData({ [`form.${inputModel}`]: value });
+    }
+  },
+  change(e) {
+    if (e.detail.length === 4) {
+      ajax('/check/verifyCode', { phone: this.data.form.phone, verifyCode: e.detail }, 'get', false, { cookie: wx.getStorageSync("sessionid") }).then(() => {
         this.setData({ isCheck: true })
       })
     }

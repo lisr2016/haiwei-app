@@ -2,41 +2,41 @@
   <van-toast id="van-toast" />
 
   <view hidden="{{ active !== 0 }}">
-    <van-field required class="not-padding" label="填报日期" value="{{ time }}" placeholder="请选择填报日期" readonly clickable is-link border="{{ false }}" bindtap="showDate" />
+    <van-field required title-width="70px" class="not-padding" label="填报日期" value="{{ time }}" placeholder="请选择填报日期" readonly clickable is-link border="{{ false }}" bindtap="showDate" />
 
     <view class="title">专兼职人员</view>
     <view class="card">
-      <van-field required title-width="160px" label="专兼职收运人员:" bind:blur="input" data-name="consignee" type="number" value="{{ form.consignee }}" placeholder="人数" border="{{ false }}" />
-      <van-field required title-width="160px" label="专兼职看守、引导人员:" bind:blur="input" data-name="guide" type="number" value="{{ form.guide }}" placeholder="人数" border="{{ false }}" />
-      <van-field required title-width="160px" label="专兼职监督、检查人员:" bind:blur="input" data-name="inspector" type="number" value="{{ form.inspector }}" placeholder="人数" border="{{ false }}" />
+      <van-field required title-width="160px" label="专兼职收运人员:" bind:blur="input" data-name="consignee" data-type="number" type="number" value="{{ form.consignee }}" placeholder="请输入专兼职收运人员人数" border="{{ false }}" />
+      <van-field required title-width="160px" label="专兼职看守、引导人员:" bind:blur="input" data-name="guide" data-type="number" type="number" value="{{ form.guide }}" placeholder="请输入专兼职看守人员人数" border="{{ false }}" />
+      <van-field required title-width="160px" label="专兼职监督、检查人员:" bind:blur="input" data-name="inspector" data-type="number" type="number" value="{{ form.inspector }}" placeholder="请输入专兼职监督人员人数" border="{{ false }}" />
     </view>
   </view>
 
   <view hidden="{{ active !== 1 }}" class="big-card">
     <view class="title">收集设施设备配置</view>
     <view class="card">
-      <van-field required title-width="160px" label="厨余投放收集容器:" bind:blur="input" data-name="kitchenWasteCollectors" type="number" value="{{ form.kitchenWasteCollectors }}" placeholder="个" border="{{ false }}" />
-      <van-field required title-width="160px" label="厨余单位暂时存放点:" bind:blur="input" data-name="kitchenWastePositions" type="number" value="{{ form.kitchenWastePositions }}" placeholder="处" border="{{ false }}" />
-      <van-field required title-width="160px" label="可回收物投放收集容器:" bind:blur="input" data-name="recyclableWasteCollectors" type="number" value="{{ form.recyclableWasteCollectors }}" placeholder="个" border="{{ false }}" />
-      <van-field required title-width="160px" label="可回收物单位暂时存放点:" bind:blur="input" data-name="recyclableWastePositions" type="number" value="{{ form.recyclableWastePositions }}" placeholder="处" border="{{ false }}" />
-      <van-field required title-width="160px" label="有害物投放收集容器:" bind:blur="input" data-name="harmfulWasteCollectors" type="number" value="{{ form.harmfulWasteCollectors }}" placeholder="个" border="{{ false }}" />
-      <van-field required title-width="160px" label="有害物单位暂时存放点:" bind:blur="input" data-name="harmfulWastePositions" type="number" value="{{ form.harmfulWastePositions }}" placeholder="处" border="{{ false }}" />
-      <van-field required title-width="160px" label="其他垃圾投放收集容器:" bind:blur="input" data-name="otherWasteCollectors" type="number" value="{{ form.otherWasteCollectors }}" placeholder="个" border="{{ false }}" />
-      <van-field required title-width="160px" label="其他垃圾单位暂时存放点:" bind:blur="input" data-name="otherWastePositions" type="number" value="{{ form.otherWastePositions }}" placeholder="处" border="{{ false }}" />
-      <van-field required title-width="160px" label="医疗废物投放收集容器:" bind:blur="input" data-name="medicWasteCollectors" type="number" value="{{ form.medicWasteCollectors }}" placeholder="个" border="{{ false }}" />
-      <van-field required title-width="160px" label="医疗废物单位暂时存放点:" bind:blur="input" data-name="medicWastePositions" type="number" value="{{ form.medicWastePositions }}" placeholder="处" border="{{ false }}" />
-      <van-field required title-width="160px" label="大件废弃物品堆放处:" bind:blur="input" data-name="bulkyWastePositions" type="number" value="{{ form.bulkyWastePositions }}" placeholder="处" border="{{ false }}" />
+      <van-field required title-width="160px" label="厨余投放收集容器:" bind:blur="input" data-name="kitchenWasteCollectors" data-type="number" type="number" value="{{ form.kitchenWasteCollectors }}" placeholder="请输入厨余垃圾投放收集容器个数" border="{{ false }}" />
+      <van-field required title-width="160px" label="厨余单位暂时存放点:" bind:blur="input" data-name="kitchenWastePositions" data-type="number" type="number" value="{{ form.kitchenWastePositions }}" placeholder="请输入厨余单位暂时存放点个数" border="{{ false }}" />
+      <van-field required title-width="160px" label="可回收物投放收集容器:" bind:blur="input" data-name="recyclableWasteCollectors" data-type="number" type="number" value="{{ form.recyclableWasteCollectors }}" placeholder="请输入可回收物投放收集容器个数" border="{{ false }}" />
+      <van-field required title-width="160px" label="可回收物单位暂时存放点:" bind:blur="input" data-name="recyclableWastePositions" data-type="number" type="number" value="{{ form.recyclableWastePositions }}" placeholder="请输入可回收物单位暂时存放点个数" border="{{ false }}" />
+      <van-field required title-width="160px" label="有害物投放收集容器:" bind:blur="input" data-name="harmfulWasteCollectors" data-type="number" type="number" value="{{ form.harmfulWasteCollectors }}" placeholder="请输入有害物投放收集容器个数" border="{{ false }}" />
+      <van-field required title-width="160px" label="有害物单位暂时存放点:" bind:blur="input" data-name="harmfulWastePositions" data-type="number" type="number" value="{{ form.harmfulWastePositions }}" placeholder="请输入有害物单位暂时存放点个数" border="{{ false }}" />
+      <van-field required title-width="160px" label="其他垃圾投放收集容器:" bind:blur="input" data-name="otherWasteCollectors" data-type="number" type="number" value="{{ form.otherWasteCollectors }}" placeholder="请输入其他垃圾投放收集容器个数" border="{{ false }}" />
+      <van-field required title-width="160px" label="其他垃圾单位暂时存放点:" bind:blur="input" data-name="otherWastePositions" data-type="number" type="number" value="{{ form.otherWastePositions }}" placeholder="请输入其他垃圾单位暂时存放点个数" border="{{ false }}" />
+      <van-field required title-width="160px" label="医疗废物投放收集容器:" bind:blur="input" data-name="medicWasteCollectors" data-type="number" type="number" value="{{ form.medicWasteCollectors }}" placeholder="请输入医疗废物投放收集容器个数" border="{{ false }}" />
+      <van-field required title-width="160px" label="医疗废物单位暂时存放点:" bind:blur="input" data-name="medicWastePositions" data-type="number" type="number" value="{{ form.medicWastePositions }}" placeholder="请输入医疗废物单位暂时存放点个数" border="{{ false }}" />
+      <van-field required title-width="160px" label="大件废弃物品堆放处:" bind:blur="input" data-name="bulkyWastePositions" data-type="number" type="number" value="{{ form.bulkyWastePositions }}" placeholder="请输入大件废弃物品堆放处个数" border="{{ false }}" />
       </view>
   </view>
 
   <view hidden="{{ active !== 2 }}">
     <view class="title">垃圾收集情况</view>
     <view class="card">
-      <van-field required label="厨余垃圾:" bind:blur="input" data-name="kitchenWaste" type="number" value="{{ form.kitchenWaste }}" placeholder="公斤" border="{{ false }}" />
-      <van-field required label="可回收物:" bind:blur="input" data-name="recyclableWaste" type="number" value="{{ form.recyclableWaste }}" placeholder="公斤" border="{{ false }}" />
-      <van-field required label="有害垃圾:" bind:blur="input" data-name="harmfulWaste" type="number" value="{{ form.harmfulWaste }}" placeholder="公斤" border="{{ false }}" />
-      <van-field required label="其他垃圾:" bind:blur="input" data-name="otherWaste" type="number" value="{{ form.otherWaste }}" placeholder="公斤" border="{{ false }}" />
-      <van-field required label="医疗废物:" bind:blur="input" data-name="medicWaste" type="number" value="{{ form.medicWaste }}" placeholder="公斤" border="{{ false }}" />
+      <van-field required label="厨余垃圾:" bind:blur="input" data-name="kitchenWaste" data-type="number" type="number" value="{{ form.kitchenWaste }}" placeholder="公斤" border="{{ false }}" />
+      <van-field required label="可回收物:" bind:blur="input" data-name="recyclableWaste" data-type="number" type="number" value="{{ form.recyclableWaste }}" placeholder="公斤" border="{{ false }}" />
+      <van-field required label="有害垃圾:" bind:blur="input" data-name="harmfulWaste" data-type="number" type="number" value="{{ form.harmfulWaste }}" placeholder="公斤" border="{{ false }}" />
+      <van-field required label="其他垃圾:" bind:blur="input" data-name="otherWaste" data-type="number" type="number" value="{{ form.otherWaste }}" placeholder="公斤" border="{{ false }}" />
+      <van-field required label="医疗废物:" bind:blur="input" data-name="medicWaste" data-type="number" type="number" value="{{ form.medicWaste }}" placeholder="公斤" border="{{ false }}" />
     </view>
   </view>
 

@@ -11,6 +11,7 @@
       bind:blur="input"
       data-name="phone"
       class="item"
+      data-type="number"
     />
     <van-field
       value="{{ form.password }}"
@@ -25,22 +26,24 @@
     />
     <van-field
       value="{{ form.verifyCode }}"
-      type="text"
+      type="number"
       left-icon	= "browsing-history-o"
       placeholder="请输入验证码"
       class="item"
       bind:blur="input"
+      bind:change="change"
       data-name="verifyCode"
       use-button-slot
+      data-type="number"
     >
       <van-button slot="button" size="small" type="default" bindtap="getCode">发送验证码</van-button>
     </van-field>
   </van-cell-group>
   <van-button type="info" round size="large" block class='login-btn' bindtap="login">登录</van-button>
-  <view class="bottom">
-    <van-switch checked="{{ checked }}" size="24px" bind:change="onChange" active-color="#1989FA"/>
-    <text>记住密码</text>
-    <text class="reset" bindtap="jump">重置密码</text>
-  </view>
+<!--  <view class="bottom">-->
+<!--    <van-switch checked="{{ checked }}" size="24px" bind:change="onChange" active-color="#1989FA"/>-->
+<!--    <text>记住密码</text>-->
+<!--    <text class="reset" bindtap="jump">重置密码</text>-->
+<!--  </view>-->
   <van-toast id="van-toast" />
 </view>

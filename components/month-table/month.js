@@ -14,7 +14,17 @@ Component({
     input(e) {
       const inputModel = e.currentTarget.dataset.name;
       const value = e.detail.value;
-      this.setData({ [`form.${inputModel}`]: value });
+      const type = e.currentTarget.dataset.type
+      const re = /^[0-9]+.?[0-9]*/;
+      if (type === 'number') {
+        if (re.test(value)) {
+          this.setData({ [`form.${inputModel}`]: value });
+        } else {
+          Toast({ type: 'fail', context: this, message: '请输入数字内容！' })
+        }
+      } else {
+        this.setData({ [`form.${inputModel}`]: value });
+      }
     },
     showDate() {
       this.setData({ show: true, })
@@ -28,8 +38,9 @@ Component({
       this.setData({ show: false })
     },
     submit() {
-      console.log(this.data.form)
-      const params = Object.assign({}, this.data.form, { time: new Date(this.data.form.time).getMonth() + 1 })
+      const month = new Date(this.data.form.time).getMonth() + 1 > 9 ? new Date(this.data.form.time).getMonth() + 1 : `0${new Date(this.data.form.time).getMonth() + 1}`
+      const time = `${new Date(this.data.form.time).getFullYear()}${month}`
+      const params = Object.assign({}, this.data.form, { time })
       const keys = Object.keys(this.data.form)
       let on = true
       keys.forEach(key => {

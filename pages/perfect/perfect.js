@@ -37,7 +37,8 @@ Page({
     ],
     levelValues: ['三级医院','二级医院','一级医院','门诊部','诊所','未定级','医务室','卫生室','社区卫生服务中心','社区卫生服务站'],
     isLevel: true,
-    show: false
+    show: false,
+    name: wx.getStorageSync('user').name
   },
   onLoad() {
 
@@ -51,7 +52,7 @@ Page({
     const params =  Object.assign({}, this.data.form, { level: String(this.data.levelValues.findIndex(item => item === this.data.form.level) + 1) })
     ajax('/v1/init/org/info', params, 'post').then(() => {
       const user = wx.getStorageSync('user');
-      wx.setStorageSync('user', Object.assign({}, user, { iinitialized: true }));
+      wx.setStorageSync('user', Object.assign({}, user, { initialized: true }));
       wx.navigateTo({ url: `/pages/index/index` })
     })
   },

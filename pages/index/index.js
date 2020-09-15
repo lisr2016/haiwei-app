@@ -31,7 +31,7 @@ Page({
       this.getUserInfo().then(res => {
         wx.setStorageSync('user', res.orgInfo);
         this.setData({ hasUserInfo: true })
-        if (!res.orgInfo.iinitialized) {
+        if (!res.orgInfo.initialized) {
           wx.navigateTo({ url: `/pages/perfect/perfect` })
         }
       })
@@ -45,7 +45,7 @@ Page({
   onShow() {
     if (this.data.hasUserInfo) {
       const user = wx.getStorageSync('user');
-      if (!user.iinitialized) {
+      if (!user.initialized) {
         wx.navigateTo({ url: `/pages/perfect/perfect` })
       }
     }

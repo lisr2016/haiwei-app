@@ -28,8 +28,9 @@ Component({
       this.setData({ show: false })
     },
     submit() {
-      console.log(this.data.form)
-      const params = Object.assign({}, this.data.form, { time: new Date(this.data.form.time).getMonth() + 1 })
+      const month = new Date(this.data.form.time).getMonth() + 1 > 9 ? new Date(this.data.form.time).getMonth() + 1 : `0${new Date(this.data.form.time).getMonth() + 1}`
+      const time = `${new Date(this.data.form.time).getFullYear()}${month}`
+      const params = Object.assign({}, this.data.form, { time })
       const keys = Object.keys(this.data.form)
       let on = true
       keys.forEach(key => {
