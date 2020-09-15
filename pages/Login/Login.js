@@ -37,7 +37,6 @@ Page({
   getCode() {
     if (!this.data.form.phone) return Toast.fail('请输入手机号');
     ajax('/get/verifyCode', { phone: this.data.form.phone }, 'get', true ).then(res => {
-      console.log(res)
       Toast.success('验证码已发送至您手机，请注意查收');
       wx.setStorageSync("sessionid", res.header["Set-Cookie"])
     })
