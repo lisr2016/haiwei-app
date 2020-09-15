@@ -1,5 +1,6 @@
 .home {
   height: 100%;
+  background: #E1F2EE;
 }
 .home .swiper {
   width: 100%;
@@ -17,15 +18,29 @@
 .home .card .item {
   width: calc(50% - 5px);
   height: 150px;
-  line-height: 150px;
   display: flex;
   justify-content: space-between;
   background: #FFFFFF;
   border-radius: 6px;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
   margin-top: 10px;
-  padding: 0 12px;
+  padding: 0 20px;
   box-sizing: border-box;
+}
+.home .card .item .add {
+  font-size: 50px;
+  font-weight: 200;
+  line-height: 150px;
+}
+.home .card .item .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.home .card .item .left .image {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 20px;
 }
 .home .card .item:nth-child(2n + 1) {
   margin-right: 10px;

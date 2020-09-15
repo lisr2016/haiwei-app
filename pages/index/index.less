@@ -1,5 +1,6 @@
 .home {
   height: 100%;
+  background: #E1F2EE;
 
   .swiper {
     width: 100%;
@@ -19,15 +20,32 @@
     .item {
       width: calc(50% - 5px);
       height: 150px;
-      line-height: 150px;
       display: flex;
       justify-content: space-between;
       background: #FFFFFF;
       border-radius: 6px;
       box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
       margin-top: 10px;
-      padding: 0 12px;
+      padding: 0 20px;
       box-sizing: border-box;
+
+      .add {
+        font-size: 50px;
+        font-weight: 200;
+        line-height: 150px;
+      }
+
+      .left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .image {
+          height: 50px;
+          width: 50px;
+          margin-bottom: 20px;
+        }
+      }
     }
 
     .item:nth-child(2n + 1) {

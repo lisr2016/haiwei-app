@@ -8,8 +8,11 @@
   </swiper>
   <view class="card">
     <view wx:for="{{ card }}" wx:key="index" class="item" bindtap="jump" data-currentData="{{ item }}">
-      <text>{{ item.label }}</text>
-      <van-icon name="plus" />
+      <view class="left">
+        <image class="image" src="{{ item.img }}" mode="aspectFill" />
+        <text>{{ item.label }}</text>
+      </view>
+      <text class="add">+</text>
     </view>
   </view>
   <view wx:for="{{ message }}" wx:key="index">

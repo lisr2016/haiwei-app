@@ -9,8 +9,8 @@ Page({
       {url: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2142142353,1341383433&fm=26&gp=0.jpg'},
     ],
     card: [
-      { label: '生活垃圾', url: '../lifeRubbish/lifeRubbish' },
-      { label: '医疗垃圾', url: '../medicineRubbish/medicineRubbish' },
+      { label: '生活垃圾', url: '../lifeRubbish/lifeRubbish', img: '../../img/life.jpeg' },
+      { label: '医疗垃圾', url: '../medicineRubbish/medicineRubbish', img: '../../img/medicine.jpeg' },
       // { label: '新建考核', url: '../CreatedAssessment/CreatedAssessment' },
       // { label: '量化填报', url: '../Reporting/Reporting' },
       // { label: '考核模版', url: '../AssessmentTemplate/AssessmentTemplate' },
