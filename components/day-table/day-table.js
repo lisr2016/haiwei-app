@@ -54,16 +54,26 @@ Component({
     next() {
       const num = this.data.active
       if (num === 4) {
-        ajax('/v1/domestic/daily', this.data.form, 'post').then(() => {
-          Toast({
-            type: 'success',
-            context: this,
-            message: '提交成功',
-            onClose: () => {
-              wx.navigateTo({ url: `/pages/index/index` })
-            },
-          });
+        const keys = Object.keys(this.data.form)
+        let on = true
+        keys.forEach(key => {
+          if(!this.data.form[key]) {
+            on = false
+            return Toast({ type: 'fail', context: this, message: '请检查表单是否输入完整！' })
+          }
         })
+        if (on) {
+          ajax('/v1/domestic/daily', this.data.form, 'post').then(() => {
+            Toast({
+              type: 'success',
+              context: this,
+              message: '提交成功',
+              onClose: () => {
+                wx.navigateTo({ url: `/pages/index/index` })
+              },
+            });
+          })
+        }
         return
       }
       this.setData({
