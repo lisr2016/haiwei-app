@@ -6,9 +6,9 @@
 
     <view class="title">专兼职人员</view>
     <view class="card">
-      <van-field required title-width="160px" label="专兼职收运人员:" bind:blur="input" data-name="consignee" data-type="number" type="number" value="{{ form.consignee }}" placeholder="请输入专兼职收运人员人数" border="{{ false }}" />
-      <van-field required title-width="160px" label="专兼职看守、引导人员:" bind:blur="input" data-name="guide" data-type="number" type="number" value="{{ form.guide }}" placeholder="请输入专兼职看守人员人数" border="{{ false }}" />
-      <van-field required title-width="160px" label="专兼职监督、检查人员:" bind:blur="input" data-name="inspector" data-type="number" type="number" value="{{ form.inspector }}" placeholder="请输入专兼职监督人员人数" border="{{ false }}" />
+      <van-field required title-width="160px" label="专兼职收运人员:" bind:blur="input" data-name="consignee" data-type="number" type="number" value="{{ form.consignee }}" placeholder="人数" border="{{ false }}" />
+      <van-field required title-width="160px" label="专兼职看守、引导人员:" bind:blur="input" data-name="guide" data-type="number" type="number" value="{{ form.guide }}" placeholder="人数" border="{{ false }}" />
+      <van-field required title-width="160px" label="专兼职监督、检查人员:" bind:blur="input" data-name="inspector" data-type="number" type="number" value="{{ form.inspector }}" placeholder="人数" border="{{ false }}" />
     </view>
   </view>
 
