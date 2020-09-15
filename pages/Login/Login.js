@@ -1,4 +1,4 @@
-import { ajax, baseUrl } from '../../utils/http'
+import { ajax } from '../../utils/http'
 import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
 
 Page({
@@ -35,8 +35,11 @@ Page({
   },
   // 获取验证码
   getCode() {
-    ajax(`${baseUrl}/get/verifyCode`, { phone: this.data.form.phone }).then(() => {
+    if (!this.data.form.phone) return Toast.fail('请输入手机号');
+    ajax('/get/verifyCode', { phone: this.data.form.phone }, 'get', true ).then(res => {
+      console.log(res)
       Toast.success('验证码已发送至您手机，请注意查收');
+      wx.setStorageSync("sessionid", res.header["Set-Cookie"])
     })
   },
   // 输入框简易双向绑定
@@ -44,8 +47,8 @@ Page({
     const inputModel = e.currentTarget.dataset.name;
     const value = e.detail.value;
     this.setData({ [`form.${inputModel}`]: value })
-    if (inputModel === 'code') {
-      ajax(`${baseUrl}/check/verifyCode`, { phone: this.data.form.phone, verifyCode: e.detail.value }).then(() => {
+    if (inputModel === 'verifyCode' && value) {
+      ajax('/check/verifyCode', { phone: this.data.form.phone, verifyCode: e.detail.value }, 'get', false, { cookie: wx.getStorageSync("sessionid") }).then(() => {
         this.setData({ isCheck: true })
       })
     }
@@ -64,8 +67,8 @@ Page({
 
     // 如果验证码校验成功
     if (this.data.isCheck) {
-      ajax(`${baseUrl}/login`, { phone: this.data.form.phone, password: this.data.form.password }, 'post').then(res => {
-        wx.setStorageSync('token', res.data)
+      ajax('/login', { phone: this.data.form.phone, password: this.data.form.password }, 'post').then(res => {
+        wx.setStorageSync('token', res.token)
         wx.navigateTo({ url: `/pages/index/index` })
       })
     } else {

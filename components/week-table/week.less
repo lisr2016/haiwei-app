@@ -9,6 +9,10 @@
     padding-left: 15px;
   }
 
+  .big-card {
+    margin-bottom: 70px;
+  }
+
   .card {
     margin: 0 12px;
     width: calc(100% - 24px);
@@ -35,16 +39,26 @@
       padding: 10px 0;
     }
   }
+}
 
-  .footer {
-    position: fixed;
-    width: 100%;
-    height: 50px;
-    padding: 3px 12px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    bottom: 20px;
-    left: 0;
+.footer {
+  position: fixed;
+  width: 100%;
+  padding: 10px 12px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background: #FFFFFF;
+
+  .btn {
+    width: calc(50% - 10px);
+
+    .van-button {
+      width: 100%;
+      border-radius: 6px;
+    }
   }
 }

@@ -8,6 +8,9 @@
   color: #999999;
   padding-left: 15px;
 }
+.week-table .big-card {
+  margin-bottom: 70px;
+}
 .week-table .card {
   margin: 0 12px;
   width: calc(100% - 24px);
@@ -28,14 +31,22 @@
 .week-table .not-padding /deep/ .van-cell {
   padding: 10px 0;
 }
-.week-table .footer {
+.footer {
   position: fixed;
   width: 100%;
-  height: 50px;
-  padding: 3px 12px;
+  padding: 10px 12px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  bottom: 20px;
+  bottom: 0;
   left: 0;
+  z-index: 1000;
+  background: #FFFFFF;
+}
+.footer .btn {
+  width: calc(50% - 10px);
+}
+.footer .btn .van-button {
+  width: 100%;
+  border-radius: 6px;
 }

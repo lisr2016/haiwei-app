@@ -4,50 +4,49 @@
 
     <view class="title">专兼职人员</view>
     <view class="card">
-      <van-field title-width="130px" label="专兼职收运人员:" type="number" model:value="{{ form.a }}" placeholder="请输入专兼职收运人员" border="{{ false }}" />
-      <van-field title-width="130px" label="专兼职看守、引导人员:" type="number" model:value="{{ form.b }}" placeholder="请输入专兼职看守、引导人员" border="{{ false }}" />
-      <van-field title-width="130px" label="专兼职监督、检查人员:" type="textarea" model:value="{{ form.c }}" placeholder="请输入专兼职监督、检查人员" border="{{ false }}" />
-      <van-field title-width="130px" label="合记:" type="textarea" model:value="{{ form.c }}" placeholder="个" border="{{ false }}" />
+      <van-field title-width="160px" label="专兼职收运人员:" type="number" model:value="{{ form.a }}" placeholder="请输入专兼职收运人员" border="{{ false }}" />
+      <van-field title-width="160px" label="专兼职看守、引导人员:" type="number" model:value="{{ form.b }}" placeholder="请输入专兼职看守、引导人员" border="{{ false }}" />
+      <van-field title-width="160px" label="专兼职监督、检查人员:" type="textarea" model:value="{{ form.c }}" placeholder="请输入专兼职监督、检查人员" border="{{ false }}" />
+      <van-field title-width="160px" label="合记:" type="textarea" model:value="{{ form.c }}" placeholder="个" border="{{ false }}" />
     </view>
   </view>
 
-  <view hidden="{{ active !== 1 }}">
+  <view hidden="{{ active !== 1 }}" class="big-card">
     <view class="title">收集设施设备配置</view>
     <view class="card">
-      <van-field title-width="130px" label="厨余投放收集容器:" type="number" model:value="{{ form.d }}" placeholder="请输入自测、巡查次数" border="{{ false }}" />
-      <van-field title-width="130px" label="厨余单位暂时存放点:" type="number" model:value="{{ form.e }}" placeholder="请输入发现存在问题次数" border="{{ false }}" />
-      <van-field title-width="130px" label="可回收物投放收集容器:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
-      <van-field title-width="130px" label="可回收物单位暂时存放点:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
-      <van-field title-width="130px" label="有害物投放收集容器:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
-      <van-field title-width="130px" label="有害物单位暂时存放点:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
-      <van-field title-width="130px" label="其他垃圾投放收集容器:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
-      <van-field title-width="130px" label="其他垃圾单位暂时存放点:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
-      <van-field title-width="130px" label="医疗废物投放收集容器:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
-      <van-field title-width="130px" label="医疗废物单位暂时存放点:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
-      <van-field title-width="130px" label="大件废弃物品堆放处:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
-      <van-field title-width="130px" label="合计投放收集容器:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
-      <van-field title-width="130px" label="合计单位暂时存放点:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
+      <van-field title-width="160px" label="厨余投放收集容器:" type="number" model:value="{{ form.d }}" placeholder="请输入自测、巡查次数" border="{{ false }}" />
+      <van-field title-width="160px" label="厨余单位暂时存放点:" type="number" model:value="{{ form.e }}" placeholder="请输入发现存在问题次数" border="{{ false }}" />
+      <van-field title-width="160px" label="可回收物投放收集容器:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
+      <van-field title-width="160px" label="可回收物单位暂时存放点:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
+      <van-field title-width="160px" label="有害物投放收集容器:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
+      <van-field title-width="160px" label="有害物单位暂时存放点:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
+      <van-field title-width="160px" label="其他垃圾投放收集容器:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
+      <van-field title-width="160px" label="其他垃圾单位暂时存放点:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
+      <van-field title-width="160px" label="医疗废物投放收集容器:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
+      <van-field title-width="160px" label="医疗废物单位暂时存放点:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
+      <van-field title-width="160px" label="大件废弃物品堆放处:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
+      <van-field title-width="160px" label="合计投放收集容器:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
+      <van-field title-width="160px" label="合计单位暂时存放点:" type="textarea" model:value="{{ form.f }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
     </view>
   </view>
 
   <view hidden="{{ active !== 2 }}">
     <view class="title">垃圾收集情况</view>
     <view class="card">
-      <van-field title-width="130px" label="厨余垃圾:" type="number" model:value="{{ form.d }}" placeholder="请输入宣传次数" border="{{ false }}" />
-      <van-field title-width="130px" label="可回收物:" type="number" model:value="{{ form.e }}" placeholder="请输入发现存在问题次数" border="{{ false }}" />
-      <van-field title-width="130px" label="有害垃圾:" type="number" model:value="{{ form.e }}" placeholder="请输入发现存在问题次数" border="{{ false }}" />
-      <van-field title-width="130px" label="其他垃圾:" type="number" model:value="{{ form.e }}" placeholder="请输入发现存在问题次数" border="{{ false }}" />
-      <van-field title-width="130px" label="医疗废物:" type="number" model:value="{{ form.e }}" placeholder="请输入发现存在问题次数" border="{{ false }}" />
-      <van-field title-width="130px" label="合计:" type="number" model:value="{{ form.e }}" placeholder="请输入发现存在问题次数" border="{{ false }}" />
+      <van-field title-width="160px" label="厨余垃圾:" type="number" model:value="{{ form.d }}" placeholder="请输入宣传次数" border="{{ false }}" />
+      <van-field title-width="160px" label="可回收物:" type="number" model:value="{{ form.e }}" placeholder="请输入发现存在问题次数" border="{{ false }}" />
+      <van-field title-width="160px" label="有害垃圾:" type="number" model:value="{{ form.e }}" placeholder="请输入发现存在问题次数" border="{{ false }}" />
+      <van-field title-width="160px" label="其他垃圾:" type="number" model:value="{{ form.e }}" placeholder="请输入发现存在问题次数" border="{{ false }}" />
+      <van-field title-width="160px" label="医疗废物:" type="number" model:value="{{ form.e }}" placeholder="请输入发现存在问题次数" border="{{ false }}" />
+      <van-field title-width="160px" label="合计:" type="number" model:value="{{ form.e }}" placeholder="请输入发现存在问题次数" border="{{ false }}" />
     </view>
   </view>
 
   <van-popup show="{{ show.date }}" position="bottom" custom-style="height: 50%" bind:close="close">
     <van-datetime-picker type="date" value="{{ form.date }}" title="请选择填报日期" bind:confirm="dateConfirm" bind:cancel="dateClose" />
   </van-popup>
-
-  <view class="footer">
-    <van-button type="info" bindtap="up" disabled="{{ active === 0 }}">上一步</van-button>
-    <van-button type="info" bindtap="next">{{ active === 2 ? '提交' : '下一步'}}</van-button>
-  </view>
+</view>
+<view class="footer van-hairline--top">
+  <van-button type="info" class="btn" block bindtap="up" disabled="{{ active === 0 }}">上一步</van-button>
+  <van-button type="info" class="btn" block bindtap="next">{{ active === 2 ? '提交' : '下一步'}}</van-button>
 </view>
