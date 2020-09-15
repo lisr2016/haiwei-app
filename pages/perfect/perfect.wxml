@@ -1,0 +1,20 @@
+<view class="perfect-box">
+  <view class="title">请完善用户信息</view>
+  <view class="card">
+    <van-field label="法人电话:" bind:blur="input" data-name="corporationPhone" type="number" value="{{ form.corporationPhone }}" placeholder="请输入法人电话" border="{{ false }}" />
+    <van-field required label="负责人电话:" bind:blur="input" data-name="managerPhone" type="number" value="{{ form.managerPhone }}" placeholder="请输入负责人电话" border="{{ false }}" />
+    <van-field label="床位数:" bind:blur="input" data-name="bednum" type="number" value="{{ form.bednum }}" placeholder="请输入床位数" border="{{ false }}" />
+    <van-field required label="地址:" bind:blur="input" data-name="address" type="text" value="{{ form.address }}" placeholder="请输入地址" border="{{ false }}" />
+    <van-field required label="级别:" data-name="level" type="text" value="{{ form.level }}" placeholder="请输入级别" readonly clickable is-link border="{{ false }}" bindtap="popupShow" />
+    <van-field required label="街道:" data-name="street" type="text" value="{{ form.street }}" placeholder="请输入街道" readonly clickable is-link border="{{ false }}" bindtap="popupShow" />
+  </view>
+
+  <van-popup show="{{ show }}" position="bottom" custom-style="height: 50%" bind:close="close">
+    <van-picker show-toolbar title="请选择{{ isLevel ? '级别' : '街道' }}" columns="{{ isLevel ? levelValues : streetData }}" bind:confirm="confirm" bind:cancel="close" />
+  </van-popup>
+
+  <view class="footer">
+    <van-button class="btn" block type="info" bindtap="submit">提交</van-button>
+  </view>
+  <van-toast id="van-toast" />
+</view>
