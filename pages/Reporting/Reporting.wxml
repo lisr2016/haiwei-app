@@ -2,9 +2,9 @@
   <view class="title">专兼职人员</view>
   <view class="card">
     <van-cell-group border="{{ false }}">
-      <van-field label="专兼职收运人员:" title-width="140px" type="number" value="{{ form.name }}" placeholder="请输入专兼职收运人员" border="{{ false }}" data-show="name" bind:change="textChange" />
-      <van-field label="专兼职看守引导人员:" title-width="140px" type="number" value="{{ form.name }}" placeholder="请输入专兼职看守引导人员" border="{{ false }}" data-show="name" bind:change="textChange" />
-      <van-field label="专兼职监督检查人员:" title-width="140px" type="number" value="{{ form.name }}" placeholder="请输入专兼职监督检查人员" border="{{ false }}" data-show="name" bind:change="textChange" />
+      <van-field label="专兼职收运人员:" title-width="140px" type="number" value="{{ form.name }}" placeholder="人数" border="{{ false }}" data-show="name" bind:change="textChange" />
+      <van-field label="专兼职看守引导人员:" title-width="140px" type="number" value="{{ form.name }}" placeholder="人数" border="{{ false }}" data-show="name" bind:change="textChange" />
+      <van-field label="专兼职监督检查人员:" title-width="140px" type="number" value="{{ form.name }}" placeholder="人数" border="{{ false }}" data-show="name" bind:change="textChange" />
     </van-cell-group>
   </view>
 
@@ -15,11 +15,11 @@
       <van-tab title="标签 2" />
       <van-tab title="标签 3" />
       <van-cell-group border="{{ false }}">
-        <van-field label="厨余垃圾:" type="number" value="{{ form.name }}" placeholder="请输入厨余垃圾" border="{{ false }}" data-show="name" bind:change="textChange" />
-        <van-field label="可回收物:" type="number" value="{{ form.name }}" placeholder="请输入可回收物" border="{{ false }}" data-show="name" bind:change="textChange" />
-        <van-field label="有害垃圾:" type="number" value="{{ form.name }}" placeholder="请输入有害垃圾" border="{{ false }}" data-show="name" bind:change="textChange" />
-        <van-field label="其他垃圾:" type="number" value="{{ form.name }}" placeholder="请输入其他垃圾" border="{{ false }}" data-show="name" bind:change="textChange" />
-        <van-field label="其他垃圾:" type="number" value="{{ form.name }}" placeholder="请输入其他垃圾" border="{{ false }}" data-show="name" bind:change="textChange" />
+        <van-field label="厨余垃圾:" type="number" value="{{ form.name }}" placeholder="公斤" border="{{ false }}" data-show="name" bind:change="textChange" />
+        <van-field label="可回收物:" type="number" value="{{ form.name }}" placeholder="公斤" border="{{ false }}" data-show="name" bind:change="textChange" />
+        <van-field label="有害垃圾:" type="number" value="{{ form.name }}" placeholder="公斤" border="{{ false }}" data-show="name" bind:change="textChange" />
+        <van-field label="其他垃圾:" type="number" value="{{ form.name }}" placeholder="公斤" border="{{ false }}" data-show="name" bind:change="textChange" />
+        <van-field label="其他垃圾:" type="number" value="{{ form.name }}" placeholder="公斤" border="{{ false }}" data-show="name" bind:change="textChange" />
       </van-cell-group>
     </van-tabs>
   </view>
@@ -27,11 +27,11 @@
   <view class="title">垃圾收集情况</view>
   <view class="card">
     <van-cell-group border="{{ false }}">
-      <van-field label="厨余垃圾:" type="number" value="{{ form.name }}" placeholder="请输入厨余垃圾" border="{{ false }}" data-show="name" bind:change="textChange" />
-      <van-field label="可回收物:" type="number" value="{{ form.name }}" placeholder="请输入可回收物" border="{{ false }}" data-show="name" bind:change="textChange" />
-      <van-field label="有害垃圾:" type="number" value="{{ form.name }}" placeholder="请输入有害垃圾" border="{{ false }}" data-show="name" bind:change="textChange" />
-      <van-field label="其他垃圾:" type="number" value="{{ form.name }}" placeholder="请输入其他垃圾" border="{{ false }}" data-show="name" bind:change="textChange" />
-      <van-field label="其他垃圾:" type="number" value="{{ form.name }}" placeholder="请输入其他垃圾" border="{{ false }}" data-show="name" bind:change="textChange" />
+      <van-field label="厨余垃圾:" type="number" value="{{ form.name }}" placeholder="公斤" border="{{ false }}" data-show="name" bind:change="textChange" />
+      <van-field label="可回收物:" type="number" value="{{ form.name }}" placeholder="公斤" border="{{ false }}" data-show="name" bind:change="textChange" />
+      <van-field label="有害垃圾:" type="number" value="{{ form.name }}" placeholder="公斤" border="{{ false }}" data-show="name" bind:change="textChange" />
+      <van-field label="其他垃圾:" type="number" value="{{ form.name }}" placeholder="公斤" border="{{ false }}" data-show="name" bind:change="textChange" />
+      <van-field label="其他垃圾:" type="number" value="{{ form.name }}" placeholder="公斤" border="{{ false }}" data-show="name" bind:change="textChange" />
     </van-cell-group>
   </view>
 
