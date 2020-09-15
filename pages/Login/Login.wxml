@@ -1,5 +1,5 @@
 <view class="login">
-  <image class="image" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599726004020&di=aea7ff8250bd817b22eb7fc961abd724&imgtype=0&src=http%3A%2F%2Ft8.baidu.com%2Fit%2Fu%3D1484500186%2C1503043093%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D1280%26h%3D853" />
+  <image class="image" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2360439453,442530600&fm=26&gp=0.jpg" />
   <view class="title">欢迎登录</view>
   <van-cell-group>
     <van-field
