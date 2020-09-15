@@ -1,5 +1,5 @@
 <view class="perfect-box">
-  <view class="title">请完善用户信息</view>
+  <view class="title">请完善用户所在机构信息</view>
   <view class="card">
     <van-field label="法人电话:" bind:blur="input" data-name="corporationPhone" type="number" value="{{ form.corporationPhone }}" placeholder="请输入法人电话" border="{{ false }}" />
     <van-field required label="负责人电话:" bind:blur="input" data-name="managerPhone" type="number" value="{{ form.managerPhone }}" placeholder="请输入负责人电话" border="{{ false }}" />
