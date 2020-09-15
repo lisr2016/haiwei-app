@@ -1,12 +1,19 @@
 var filter = {
-  formatTime: function(params) {
+  formatTime: function(params, on = true) {
     if (params) {
       var date = getDate(params)
       var year = date.getFullYear()
       var month = date.getMonth() + 1
       var day = date.getDate()
-
-      return [year, month, day].map(formatNumber).join('-')
+      var arr = on ? [year, month, day] : [year, month]
+      return arr.map(formatNumber).join('-')
+    } else {
+      return ''
+    }
+  },
+  getMonth: function(params) {
+    if (params) {
+      return getDate(params).getMonth() + 1
     } else {
       return ''
     }
@@ -17,6 +24,4 @@ var formatNumber = function (n) {
   return n[1] ? n : '0' + n
 }
 
-module.exports = {
-  formatTime: filter.formatTime
-}
+module.exports = filter

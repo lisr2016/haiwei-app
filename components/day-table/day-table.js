@@ -25,7 +25,7 @@ Component({
     },
     active: 0,
     minDate: new Date("2020/01/01 00:00:00").getTime(),
-    show: { date: false }
+    show: false
   },
   ready() {
 
@@ -41,15 +41,15 @@ Component({
       this.setData({ [`form.${inputModel}`]: e.detail });
     },
     showDate() {
-      this.setData({ 'show.date': true, })
+      this.setData({ show: true, })
     },
 
     dateConfirm(e) {
-      this.setData({ 'form.time': e.detail, 'show.date': false })
+      this.setData({ 'form.time': e.detail, show: false })
     },
 
     dateClose() {
-      this.setData({ 'show.date': false })
+      this.setData({ show: false })
     },
     next() {
       const num = this.data.active

@@ -1,23 +1,24 @@
+<wxs module="filter" src="../../utils/util.wxs" />
 <view class="month-table">
-
   <view>
-    <van-field class="not-padding" label="填报日期" value="{{ form.date }}" placeholder="请选择填报日期" readonly clickable is-link border="{{ false }}" bindtap="showDate" />
+    <van-field class="not-padding" label="填报日期" value="{{ filter.formatTime(form.time, false) }}" placeholder="请选择填报日期" readonly clickable is-link border="{{ false }}" bindtap="showDate" />
 
-    <view class="title">XX月垃圾收集情况</view>
+    <view class="title">{{ filter.getMonth(form.time) }}月垃圾收集情况</view>
     <view class="card">
-      <van-field title-width="130px" label="厨余垃圾:" type="number" model:value="{{ form.a }}" placeholder="请输入管理工作会议次数" border="{{ false }}" />
-      <van-field title-width="130px" label="可回收物:" type="number" model:value="{{ form.b }}" placeholder="请输入主要/主管领导" border="{{ false }}" />
-      <van-field title-width="130px" label="有害垃圾:" type="textarea" model:value="{{ form.c }}" placeholder="请输入具体事项" border="{{ false }}" />
-      <van-field title-width="130px" label="其他垃圾:" type="textarea" model:value="{{ form.c }}" placeholder="请输入具体事项" border="{{ false }}" />
-      <van-field title-width="130px" label="合计:" type="textarea" model:value="{{ form.c }}" placeholder="请输入具体事项" border="{{ false }}" />
+      <van-field label="厨余垃圾:" bind:blur="input" data-name="kitchenWaste" type="number" value="{{ form.kitchenWaste }}" placeholder="请输入厨余垃圾公斤数" border="{{ false }}" />
+      <van-field label="可回收物:" bind:blur="input" data-name="recyclableWaste" type="number" value="{{ form.recyclableWaste }}" placeholder="请输入可回收物公斤数" border="{{ false }}" />
+      <van-field label="有害垃圾:" bind:blur="input" data-name="harmfulWaste" type="number" value="{{ form.harmfulWaste }}" placeholder="请输入有害垃圾公斤数" border="{{ false }}" />
+      <van-field label="其他垃圾:" bind:blur="input" data-name="otherWaste" type="number" value="{{ form.otherWaste }}" placeholder="请输入其他垃圾公斤数" border="{{ false }}" />
+      <van-field label="大件废物:" bind:blur="input" data-name="bulkyWaste" type="number" value="{{ form.bulkyWaste }}" placeholder="请输入大件废物公斤数" border="{{ false }}" />
     </view>
   </view>
 
-  <van-popup show="{{ show.date }}" position="bottom" custom-style="height: 50%" bind:close="close">
-    <van-datetime-picker type="date" value="{{ form.date }}" title="请选择填报日期" bind:confirm="dateConfirm" bind:cancel="dateClose" />
+  <van-popup show="{{ show }}" position="bottom" custom-style="height: 50%" bind:close="dateClose">
+    <van-datetime-picker type="year-month" min-date="{{ minDate }}" value="{{ form.time }}" title="请选择填报日期" bind:confirm="dateConfirm" bind:cancel="dateClose" />
   </van-popup>
 
   <view class="footer">
-    <van-button type="info" bindtap="next">提交</van-button>
+    <van-button class="btn" type="info" block bindtap="submit">提交</van-button>
   </view>
+  <van-toast id="van-toast" />
 </view>

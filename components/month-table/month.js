@@ -1,40 +1,45 @@
+import { ajax } from '../../utils/http'
+import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast'
+
 Component({
-  properties: {},
   data: {
-    form: {
-      date: '',
-      a: '', b: '', c: '', d: '', e: '', f: ''
-    },
-    active: 0,
-    show: { date: false }
+    form: { time: new Date().getTime(), kitchenWaste: '', recyclableWaste: '', harmfulWaste: '', bulkyWaste: '', otherWaste: '' },
+    show: false,
+    minDate: new Date("2020/01/01 00:00:00").getTime(),
   },
   ready() {
 
   },
   methods: {
+    input(e) {
+      const inputModel = e.currentTarget.dataset.name;
+      const value = e.detail.value;
+      this.setData({ [`form.${inputModel}`]: value });
+    },
     showDate() {
-      this.setData({ 'show.date': true, })
+      this.setData({ show: true, })
     },
 
     dateConfirm(e) {
-      this.setData({ 'form.date': e.detail, 'show.date': false })
+      console.log(e.detail)
+      this.setData({ 'form.time': e.detail, show: false })
     },
 
     dateClose() {
-      this.setData({ 'show.date': false })
+      this.setData({ show: false })
     },
-    next() {
-      const num = this.data.active
-      if (num === 4) return
-      this.setData({
-        active: num + 1
-      })
-    },
-    up() {
-      const num = this.data.active
-      if (num === 0) return
-      this.setData({
-        active: num - 1
+    submit() {
+      console.log(this.data.form)
+      const params = Object.assign({}, this.data.form, { time: new Date(this.data.form.time).getMonth() + 1 })
+      ajax('/v1/domestic/monthly', params, 'post').then(() => {
+        Toast({
+          type: 'success',
+          context: this,
+          message: '提交成功',
+          onClose: () => {
+            wx.navigateTo({ url: `/pages/index/index` })
+          },
+        });
       })
     }
   }
