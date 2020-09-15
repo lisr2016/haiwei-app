@@ -5,11 +5,11 @@
 
     <view class="title">{{ filter.getMonth(form.time) }}月垃圾收集情况</view>
     <view class="card">
-      <van-field label="厨余垃圾:" bind:blur="input" data-name="kitchenWaste" type="number" value="{{ form.kitchenWaste }}" placeholder="请输入厨余垃圾公斤数" border="{{ false }}" />
-      <van-field label="可回收物:" bind:blur="input" data-name="recyclableWaste" type="number" value="{{ form.recyclableWaste }}" placeholder="请输入可回收物公斤数" border="{{ false }}" />
-      <van-field label="有害垃圾:" bind:blur="input" data-name="harmfulWaste" type="number" value="{{ form.harmfulWaste }}" placeholder="请输入有害垃圾公斤数" border="{{ false }}" />
-      <van-field label="其他垃圾:" bind:blur="input" data-name="otherWaste" type="number" value="{{ form.otherWaste }}" placeholder="请输入其他垃圾公斤数" border="{{ false }}" />
-      <van-field label="大件废物:" bind:blur="input" data-name="bulkyWaste" type="number" value="{{ form.bulkyWaste }}" placeholder="请输入大件废物公斤数" border="{{ false }}" />
+      <van-field label="厨余垃圾:" bind:blur="input" data-name="kitchenWaste" type="number" value="{{ form.kitchenWaste }}" placeholder="公斤" border="{{ false }}" />
+      <van-field label="可回收物:" bind:blur="input" data-name="recyclableWaste" type="number" value="{{ form.recyclableWaste }}" placeholder="公斤" border="{{ false }}" />
+      <van-field label="有害垃圾:" bind:blur="input" data-name="harmfulWaste" type="number" value="{{ form.harmfulWaste }}" placeholder="公斤" border="{{ false }}" />
+      <van-field label="其他垃圾:" bind:blur="input" data-name="otherWaste" type="number" value="{{ form.otherWaste }}" placeholder="公斤" border="{{ false }}" />
+      <van-field label="大件废物:" bind:blur="input" data-name="bulkyWaste" type="number" value="{{ form.bulkyWaste }}" placeholder="公斤" border="{{ false }}" />
     </view>
   </view>
 

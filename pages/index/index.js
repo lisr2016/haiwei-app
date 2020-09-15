@@ -1,15 +1,13 @@
 import { ajax } from '../../utils/http'
 Page({
   data: {
-    motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     movies: [
-      { url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599726004020&di=aea7ff8250bd817b22eb7fc961abd724&imgtype=0&src=http%3A%2F%2Ft8.baidu.com%2Fit%2Fu%3D1484500186%2C1503043093%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D1280%26h%3D853' },
-      { url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599726004020&di=8e16d4005e67b933859319873b6b9b44&imgtype=0&src=http%3A%2F%2Ft8.baidu.com%2Fit%2Fu%3D2247852322%2C986532796%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D1280%26h%3D853' },
-      { url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599726004019&di=59ec7b5f1448f66acc1ae9f4035c1786&imgtype=0&src=http%3A%2F%2Ft9.baidu.com%2Fit%2Fu%3D583874135%2C70653437%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D3607%26h%3D2408' },
-      { url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599726004018&di=e40bf2709ea33c659057eda75835079d&imgtype=0&src=http%3A%2F%2Ft9.baidu.com%2Fit%2Fu%3D2268908537%2C2815455140%26fm%3D79%26app%3D86%26f%3DJPEG%3Fw%3D1280%26h%3D719' },
+      { url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600160520268&di=d25dc35f751f762da12878a6149ba995&imgtype=0&src=http%3A%2F%2Fwww.itmsc.cn%2Fuploads%2Fallimg%2F171125%2F112214D04_0.png' },
+      { url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600160701110&di=f75d9b16b73656f8f180b9f0b16ef85d&imgtype=0&src=http%3A%2F%2Fpic.51yuansu.com%2Fbackgd%2Fcover%2F00%2F46%2F01%2F5bfcc8c6bef5c.jpg%2521%2Ffw%2F780%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue' },
+      { url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600160596837&di=29400d565d240c627e7c43048bb0a7c1&imgtype=0&src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F03%2F28%2F90%2F5b7d5e5a6efa2_610.jpg' },
     ],
     card: [
       { label: '生活垃圾', url: '../lifeRubbish/lifeRubbish' },
@@ -21,11 +19,11 @@ Page({
       // { label: '工作记录', url: '../WorkRecording/WorkRecording' },
     ],
     message: [
-      { text: '您有一个自我考核没有完成', url: '' },
-      { text: '您有一个跨部门考核没有完成', url: '' },
-      { text: '上级部门发布重要信息', url: '' },
-      { text: '考核未通过，需要整改', url: '' },
-      { text: '您有一个考核需要验证', url: '' },
+      // { text: '您有一个自我考核没有完成', url: '' },
+      // { text: '您有一个跨部门考核没有完成', url: '' },
+      // { text: '上级部门发布重要信息', url: '' },
+      // { text: '考核未通过，需要整改', url: '' },
+      // { text: '您有一个考核需要验证', url: '' },
     ]
   },
   onLoad: async function () {
