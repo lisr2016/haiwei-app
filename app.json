@@ -14,7 +14,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "首页",
+    "navigationBarTitleText": "海淀区卫健委后勤系统",
     "navigationBarTextStyle":"black"
   },
   "sitemapLocation": "sitemap.json"
