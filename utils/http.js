@@ -4,6 +4,7 @@ function ajax(url,data,method, all = false, header = { token: wx.getStorageSync(
   const currentPage = pages[pages.length - 1];
   if(!token && currentPage.route !== 'pages/Login/Login'){
     wx.navigateTo({ url: `/pages/Login/Login` });
+    return
   }
   const params = method === 'post' ? filterParams(data, true) : filterParams(data)
   return new Promise((resolve,reject)=>{
@@ -18,11 +19,13 @@ function ajax(url,data,method, all = false, header = { token: wx.getStorageSync(
             resolve(all ? obj : obj.data.data)
           }
         } else {
+          wx.showToast({ title: obj.data.msg, icon: 'loading' })
           reject(obj.data);
         }
       },
       fail: function (res) {
         reject(res);
+        wx.showToast({ title: String(res), icon: 'loading' })
       }
     })
   })
