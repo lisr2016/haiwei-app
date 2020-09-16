@@ -50,7 +50,7 @@ Page({
           clearInterval(timer)
         } else {
           num -= 1
-          this.setData({ codeText: num, isCode: false })
+          this.setData({ codeText: num + 's后重发', isCode: false })
         }
       }, 1000)
     })
