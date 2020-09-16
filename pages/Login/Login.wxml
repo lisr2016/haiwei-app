@@ -34,9 +34,8 @@
       bind:change="change"
       data-name="verifyCode"
       use-button-slot
-      data-type="number"
     >
-      <van-button slot="button" size="small" type="default" bindtap="getCode">发送验证码</van-button>
+      <van-button slot="button" size="small" type="default" bindtap="getCode">{{ codeText }}</van-button>
     </van-field>
   </van-cell-group>
   <van-button type="info" round size="large" block class='login-btn' bindtap="login">登录</van-button>

@@ -10,7 +10,9 @@ Page({
     },
     checked: false,
     isCheck: false,
-    isClosed: true
+    isClosed: true,
+    codeText: '发送验证码',
+    isCode: true,
   },
   onLoad() {
     const account = wx.getStorageSync('account')
@@ -36,26 +38,28 @@ Page({
   // 获取验证码
   getCode() {
     if (!this.data.form.phone) return Toast.fail('请输入手机号');
+    if (!this.data.isCode) return Toast.fail('请勿重复发送验证码');
+
     ajax('/get/verifyCode', { phone: this.data.form.phone }, 'get', true ).then(res => {
       Toast.success('验证码已发送至您手机，请注意查收');
       wx.setStorageSync("sessionid", res.header["Set-Cookie"])
+      let num = 60
+      const timer = setInterval(() => {
+        if (num === 1) {
+          this.setData({ codeText: '重新发送', isCode: true })
+          clearInterval(timer)
+        } else {
+          num -= 1
+          this.setData({ codeText: num, isCode: false })
+        }
+      }, 1000)
     })
   },
   // 输入框简易双向绑定
   input(e) {
     const inputModel = e.currentTarget.dataset.name;
     const value = e.detail.value;
-    const type = e.currentTarget.dataset.type
-    const re = /^[0-9]+.?[0-9]*/;
-    if (type === 'number') {
-      if (re.test(value)) {
-        this.setData({ [`form.${inputModel}`]: value });
-      } else {
-        Toast({ type: 'fail', context: this, message: '请输入数字内容！' })
-      }
-    } else {
-      this.setData({ [`form.${inputModel}`]: value });
-    }
+    this.setData({ [`form.${inputModel}`]: value });
   },
   change(e) {
     if (e.detail.length === 4) {
