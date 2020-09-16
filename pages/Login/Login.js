@@ -45,7 +45,6 @@ Page({
   input(e) {
     const inputModel = e.currentTarget.dataset.name;
     const value = e.detail.value;
-    console.log(value)
     const type = e.currentTarget.dataset.type
     const re = /^[0-9]+.?[0-9]*/;
     if (type === 'number') {

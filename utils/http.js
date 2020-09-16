@@ -5,10 +5,11 @@ function ajax(url,data,method, all = false, header = { token: wx.getStorageSync(
   if(!token && currentPage.route !== 'pages/Login/Login'){
     wx.navigateTo({ url: `/pages/Login/Login` });
   }
+  const params = method === 'post' ? filterParams(data, true) : filterParams(data)
   return new Promise((resolve,reject)=>{
     wx.request({
       url: `https://chiateocean.com.cn/hdhq${url}`,
-      data: data || {},
+      data: params || {},
       method: method || 'get',
       header,
       success: function (obj) {
@@ -25,6 +26,28 @@ function ajax(url,data,method, all = false, header = { token: wx.getStorageSync(
       }
     })
   })
+}
+
+function filterParams (params, post) {
+  const entityType = ['number', 'boolean']
+
+  if (post) entityType.push('string')
+
+  if (entityType.includes(typeof params) || Array.isArray(params)) {
+    return params
+  }
+
+  if (typeof params === 'object' && params) {
+    const result = {}
+
+    Object.keys(params).forEach(key => {
+      if (params[key]) {
+        result[key] = params[key]
+      }
+    })
+
+    return result
+  }
 }
 
 module.exports = { ajax }

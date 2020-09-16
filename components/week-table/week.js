@@ -37,7 +37,6 @@ Component({
       week.push({ label: `${item.start}到${item.end}`, value: item.timestamp })
     })
     this.setData({ week: week.reverse() })
-    console.log(week)
   },
   methods: {
     input(e) {
@@ -69,7 +68,6 @@ Component({
     next() {
       const num = this.data.active
       if (num === 2) {
-        console.log(this.data.form)
         const keys = Object.keys(this.data.form)
         let on = true
         keys.forEach(key => {

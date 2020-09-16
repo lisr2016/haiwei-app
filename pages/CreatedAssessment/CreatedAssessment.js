@@ -40,9 +40,7 @@ Page({
     this.setData({ 'show.picker': false, [str]: e.detail.value })
   },
   closePicker() { this.setData({ 'show.picker': false }) },
-  created() {
-    console.log(this.data.form)
-  },
+  created() {},
   textChange(e) {
     const str = `form.${e.currentTarget.dataset.show === 'name' ? 'name' : 'target'}`
     this.setData({ [str]: e.detail })
