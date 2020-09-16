@@ -38,10 +38,11 @@ Page({
     levelValues: ['三级医院','二级医院','一级医院','门诊部','诊所','未定级','医务室','卫生室','社区卫生服务中心','社区卫生服务站'],
     isLevel: true,
     show: false,
-    name: wx.getStorageSync('user').name
+    name: ''
   },
   onLoad() {
-
+    this.setData({ name: wx.getStorageSync('user').name })
+    console.log(this.data.name)
   },
   submit() {
     if (!this.data.form.managerPhone) return Toast.fail('请输入负责人电话');
