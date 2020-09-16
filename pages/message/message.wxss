@@ -1,0 +1,26 @@
+.message {
+  background: #E1F2EE;
+  min-height: 100vh;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+.message .card {
+  margin: 0 12px;
+  width: calc(100% - 24px);
+  border-radius: 6px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  min-height: 200px;
+  box-sizing: border-box;
+  background: #FFFFFF;
+}
+.message .card .title {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.message .card .content {
+  font-size: 16px;
+  color: #999999;
+  text-indent: 15px;
+}

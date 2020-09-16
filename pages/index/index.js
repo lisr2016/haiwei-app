@@ -17,13 +17,7 @@ Page({
       // { label: '量化报表', url: '../QuantifyTable/QuantifyTable' },
       // { label: '工作记录', url: '../WorkRecording/WorkRecording' },
     ],
-    message: [
-      { content: '您有一个自我考核没有完成', type: '', isRead: '', createTime: '' },
-      { content: '您有一个跨部门考核没有完成', type: '', isRead: '', createTime: '' },
-      { content: '上级部门发布重要信息', type: '', isRead: '', createTime: '' },
-      { content: '考核未通过，需要整改', type: '', isRead: '', createTime: '' },
-      { content: '您有一个考核需要验证', type: '', isRead: '', createTime: '' },
-    ]
+    message: []
   },
   onLoad: async function () {
     const user = wx.getStorageSync('user');
@@ -38,9 +32,17 @@ Page({
     } else {
       this.setData({ hasUserInfo: true })
     }
-    this.getMessage().then(res => {
-      console.log(res)
-    })
+  },
+  jumpToDetail(e) {
+    const { type, id, } = e.currentTarget.dataset.message
+    const mock = {
+      '1': `../message/message?id=${id}`,
+      '2': `../lifeRubbish/lifeRubbish?type=0&id=${id}`,
+      '3': `../lifeRubbish/lifeRubbish?type=1&id=${id}`,
+      '4': `../lifeRubbish/lifeRubbish?type=2&id=${id}`,
+      '5': `../medicineRubbish/medicineRubbish?id=${id}`,
+    }
+    wx.navigateTo({ url: mock[type] })
   },
   onShow() {
     if (this.data.hasUserInfo) {
@@ -49,6 +51,9 @@ Page({
         wx.navigateTo({ url: `/pages/perfect/perfect` })
       }
     }
+    this.getMessage().then(res => {
+      this.setData({ message: res })
+    })
   },
   jump(e) {
     const { url } = e.currentTarget.dataset.currentdata

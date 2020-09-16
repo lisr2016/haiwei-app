@@ -9,7 +9,8 @@
     "pages/medicineRubbish/medicineRubbish",
     "pages/lifeRubbish/lifeRubbish",
     "pages/Login/Login",
-    "pages/perfect/perfect"
+    "pages/perfect/perfect",
+    "pages/message/message"
   ],
   "window":{
     "backgroundTextStyle":"light",
