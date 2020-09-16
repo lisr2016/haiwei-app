@@ -18,11 +18,11 @@ Page({
       // { label: '工作记录', url: '../WorkRecording/WorkRecording' },
     ],
     message: [
-      // { text: '您有一个自我考核没有完成', url: '' },
-      // { text: '您有一个跨部门考核没有完成', url: '' },
-      { text: '上级部门发布重要信息', url: '' },
-      // { text: '考核未通过，需要整改', url: '' },
-      // { text: '您有一个考核需要验证', url: '' },
+      { content: '您有一个自我考核没有完成', type: '', isRead: '', createTime: '' },
+      { content: '您有一个跨部门考核没有完成', type: '', isRead: '', createTime: '' },
+      { content: '上级部门发布重要信息', type: '', isRead: '', createTime: '' },
+      { content: '考核未通过，需要整改', type: '', isRead: '', createTime: '' },
+      { content: '您有一个考核需要验证', type: '', isRead: '', createTime: '' },
     ]
   },
   onLoad: async function () {

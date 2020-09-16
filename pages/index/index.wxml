@@ -15,7 +15,10 @@
       <text class="add">+</text>
     </view>
   </view>
-  <view wx:for="{{ message }}" wx:key="index">
-    <van-notice-bar color="#1989fa" background="#ecf9ff" left-icon="info-o" text="{{ item.text }}" />
+  <view class="title">消息列表</view>
+  <view class="message-card">
+    <view wx:for="{{ message }}" wx:key="index">
+      <van-notice-bar left-icon="info-o" text="{{ item.content }}" />
+    </view>
   </view>
 </view>

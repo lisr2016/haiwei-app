@@ -42,7 +42,6 @@ Page({
   },
   onLoad() {
     this.setData({ name: wx.getStorageSync('user').name })
-    console.log(this.data.name)
   },
   submit() {
     if (!this.data.form.managerPhone) return Toast.fail('请输入负责人电话');
