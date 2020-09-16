@@ -42,17 +42,7 @@ Component({
     input(e) {
       const inputModel = e.currentTarget.dataset.name;
       const value = e.detail.value;
-      const type = e.currentTarget.dataset.type
-      const re = /^[0-9]+.?[0-9]*/;
-      if (type === 'number') {
-        if (re.test(value)) {
-          this.setData({ [`form.${inputModel}`]: value });
-        } else {
-          Toast({ type: 'fail', context: this, message: '请输入数字内容！' })
-        }
-      } else {
-        this.setData({ [`form.${inputModel}`]: value });
-      }
+      this.setData({ [`form.${inputModel}`]: value });
     },
     showDate() {
       this.setData({ show: true, })
