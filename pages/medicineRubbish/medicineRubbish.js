@@ -32,8 +32,9 @@ Page({
     this.setData({ show: false })
   },
   submit() {
-    const month = new Date(this.data.form.time).getMonth() + 1 > 9 ? new Date(this.data.form.time).getMonth() + 1 : `0${new Date(this.data.form.time).getMonth() + 1}`
-    const time = `${new Date(this.data.form.time).getFullYear()}${month}`
+    // const month = new Date(this.data.form.time).getMonth() + 1 > 9 ? new Date(this.data.form.time).getMonth() + 1 : `0${new Date(this.data.form.time).getMonth() + 1}`
+    // const time = `${new Date(this.data.form.time).getFullYear()}${month}`
+    const time = new Date(new Date(this.data.form.time).getFullYear(), new Date(this.data.form.time).getMonth(), 0).getTime();
     const params = Object.assign({}, this.data.form, { time })
     const keys = Object.keys(this.data.form)
     let on = true
