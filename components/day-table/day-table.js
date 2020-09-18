@@ -57,7 +57,7 @@ Component({
         const keys = Object.keys(this.data.form)
         let on = true
         keys.forEach(key => {
-          if(!this.data.form[key]) {
+          if(!this.data.form[key] && key !== 'govCorrected' && key !== 'selfCorrected') {
             on = false
             return Toast({ type: 'fail', context: this, message: '请检查表单是否输入完整！' })
           }
