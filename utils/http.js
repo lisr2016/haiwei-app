@@ -44,7 +44,7 @@ function filterParams (params, post) {
     const result = {}
 
     Object.keys(params).forEach(key => {
-      if (params[key]) {
+      if (params[key] !== '') {
         result[key] = params[key]
       }
     })

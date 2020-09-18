@@ -42,7 +42,7 @@ Page({
       '4': `../lifeRubbish/lifeRubbish?type=2&id=${id}`,
       '5': `../medicineRubbish/medicineRubbish?id=${id}`,
     }
-    wx.navigateTo({ url: mock[type] })
+    wx.redirectTo({ url: mock[type] })
   },
   onShow() {
     if (this.data.hasUserInfo) {
