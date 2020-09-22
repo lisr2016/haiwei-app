@@ -34,13 +34,16 @@ Page({
     }
   },
   jumpToDetail(e) {
-    const { type, id, } = e.currentTarget.dataset.message
+    const { type, id, content, title } = e.currentTarget.dataset.message
     const mock = {
-      '1': `../message/message?id=${id}`,
+      '1': `../message/message`,
       '2': `../lifeRubbish/lifeRubbish?type=0&id=${id}`,
       '3': `../lifeRubbish/lifeRubbish?type=1&id=${id}`,
       '4': `../lifeRubbish/lifeRubbish?type=2&id=${id}`,
       '5': `../medicineRubbish/medicineRubbish?id=${id}`,
+    }
+    if (type === '1') {
+      wx.setStorageSync('message', { content, title });
     }
     wx.redirectTo({ url: mock[type] })
   },
