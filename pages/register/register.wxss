@@ -53,6 +53,4 @@
 .login .register-text {
   font-size: 14px;
   color: #259D8F;
-  text-align: center;
-  margin-top: 20px;
 }

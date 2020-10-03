@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/register/register",
     "pages/index/index",
     "pages/CreatedAssessment/CreatedAssessment",
     "pages/Reporting/Reporting",
@@ -14,9 +15,9 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#259D8F",
     "navigationBarTitleText": "海淀区卫健委后勤系统",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json"
 }

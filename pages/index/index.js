@@ -9,8 +9,12 @@ Page({
       {url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600160701110&di=f75d9b16b73656f8f180b9f0b16ef85d&imgtype=0&src=http%3A%2F%2Fpic.51yuansu.com%2Fbackgd%2Fcover%2F00%2F46%2F01%2F5bfcc8c6bef5c.jpg%2521%2Ffw%2F780%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue'},
     ],
     card: [
-      { label: '生活垃圾', url: '../lifeRubbish/lifeRubbish', img: '../../img/life.jpeg' },
-      { label: '医疗垃圾', url: '../medicineRubbish/medicineRubbish', img: '../../img/medicine.jpeg' },
+      { label: '生活垃圾', url: '../lifeRubbish/lifeRubbish', icon: 'delete' },
+      { label: '医疗垃圾', url: '../medicineRubbish/medicineRubbish', icon: 'qr' },
+      { label: '考核验证', url: '../medicineRubbish/medicineRubbish', icon: 'exchange' },
+      { label: '已读消息', url: '../medicineRubbish/medicineRubbish', icon: 'comment-o' },
+      { label: '未读消息', url: '../medicineRubbish/medicineRubbish', icon: 'chat-o' },
+      { label: '政策发布', url: '../medicineRubbish/medicineRubbish', icon: 'add-o' },
       // { label: '新建考核', url: '../CreatedAssessment/CreatedAssessment' },
       // { label: '量化填报', url: '../Reporting/Reporting' },
       // { label: '考核模版', url: '../AssessmentTemplate/AssessmentTemplate' },
@@ -54,9 +58,9 @@ Page({
         wx.navigateTo({ url: `/pages/perfect/perfect` })
       }
     }
-    this.getMessage().then(res => {
-      this.setData({ message: res })
-    })
+    // this.getMessage().then(res => {
+    //   this.setData({ message: res })
+    // })
   },
   jump(e) {
     const { url } = e.currentTarget.dataset.currentdata

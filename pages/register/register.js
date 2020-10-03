@@ -1,4 +1,5 @@
 import { ajax } from '../../utils/http'
+
 import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
 
 Page({
@@ -6,13 +7,16 @@ Page({
     form:{
       phone: '',
       password: '',
-      verifyCode:''
+      verifyCode:'',
+      organizationId: ''
     },
+    organization: '',
     checked: false,
     isCheck: false,
-    isClosed: true,
     codeText: '发送验证码',
     isCode: true,
+    show: false,
+    columns: [{ text: 'll', id: '111' }]
   },
   onLoad() {
     const account = wx.getStorageSync('account')
@@ -23,10 +27,6 @@ Page({
         checked: true
       })
     }
-  },
-
-  clickIcon() {
-    this.setData({ isClosed: !this.data.isClosed })
   },
   // 记住密码切换
   onChange({ detail }) {
@@ -55,6 +55,9 @@ Page({
       }, 1000)
     })
   },
+  organizationInput(e) {
+    this.setData({ organization: e.detail.value });
+  },
   // 输入框简易双向绑定
   input(e) {
     const inputModel = e.currentTarget.dataset.name;
@@ -69,20 +72,17 @@ Page({
     }
   },
   // 登录
-  login() {
+  goRegister() {
     if (!this.data.form.phone) return Toast.fail('请输入手机号');
     if (!this.data.form.password) return Toast.fail('请输入密码');
     if (!this.data.form.verifyCode) return Toast.fail('请输入验证码');
-
-    // 如果选择记住密码
-    if (this.data.checked) {
-      const { password, phone } = this.data.form
-      wx.setStorageSync('account', { password, phone })
-    }
+    if (!this.data.form.organizationId) return Toast.fail('请输入机构名称');
 
     // 如果验证码校验成功
     if (this.data.isCheck) {
-      ajax('/login', { phone: this.data.form.phone, password: this.data.form.password }, 'post').then(res => {
+      const { phone, password, organizationId } = this.data.form
+      const params = { phone, password, organizationId }
+      ajax('/signup', params, 'post').then(res => {
         wx.setStorageSync('token', res.token)
         wx.navigateTo({ url: `/pages/index/index` })
       })
@@ -90,7 +90,26 @@ Page({
       Toast.fail('验证码校验错误,请检查验证码！');
     }
   },
-  register() {
-    wx.navigateTo({ url: `/pages/register/register` })
+  search() {
+    if (this.data.organization !== '') {
+      ajax('/get/org/list',{ search: this.data.organization }, 'post').then(res => {
+        this.setData({
+          show: true,
+          columns: res.list.map(item => ({ text: item.name, id: item.organizationId }))
+        })
+      })
+    } else {
+      Toast.fail('请输入机构名称！');
+    }
+  },
+  close() {
+    this.setData({ show: false })
+  },
+  onConfirm(e) {
+    this.setData({
+      show: false,
+      organization: e.detail.value.text,
+      'form.organizationId': e.detail.value.id
+    })
   }
 })

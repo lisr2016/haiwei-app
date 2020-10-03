@@ -1,6 +1,6 @@
 <view class="login">
   <image class="image" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2360439453,442530600&fm=26&gp=0.jpg" />
-  <view class="title">欢迎登录</view>
+  <view class="title">欢迎注册</view>
   <van-cell-group>
     <van-field
       value="{{ form.phone }}"
@@ -15,14 +15,22 @@
     />
     <van-field
       value="{{ form.password }}"
-      type="{{ isClosed ? 'password' : 'text' }}"
+      type="text"
       left-icon="browsing-history-o"
-      right-icon="{{ isClosed ? 'closed-eye' : 'eye-o' }}"
       placeholder="请输入密码"
       bind:blur="input"
       data-name="password"
       class="item"
-      bind:click-icon="clickIcon"
+    />
+    <van-field
+      value="{{ organization }}"
+      type="text"
+      left-icon="browsing-history-o"
+      right-icon="search"
+      placeholder="请输入机构关键词"
+      bind:blur="organizationInput"
+      class="item"
+      bind:click-icon="search"
     />
     <van-field
       value="{{ form.verifyCode }}"
@@ -38,7 +46,15 @@
       <van-button slot="button" size="small" type="default" bindtap="getCode">{{ codeText }}</van-button>
     </van-field>
   </van-cell-group>
-  <van-button round color="#259D8F" size="large" block class='login-btn btn' bindtap="login">登录</van-button>
-  <view class="register-text" bindtap="register">暂无账号，去注册</view>
+  <van-button round color="#259D8F" size="large" block class='login-btn btn' bindtap="goRegister">注册</van-button>
   <van-toast id="van-toast" />
+  <van-popup show="{{ show }}" position="bottom" custom-style="height: 50%" bind:close="close">
+    <van-picker
+      show-toolbar
+      title="请选择机构"
+      columns="{{ columns }}"
+      bind:cancel="close"
+      bind:confirm="onConfirm"
+    />
+  </van-popup>
 </view>

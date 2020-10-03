@@ -3,83 +3,61 @@
   min-height: 100vh;
   padding-bottom: 10px;
 
-  .swiper {
-    width: 100%;
+  .header {
     height: 200px;
+    width: 100%;
+    background: #259D8F;
+    padding: 20px;
+    box-sizing: border-box;
 
-    .slide-image {
+    .swiper {
       width: 100%;
-    }
-  }
+      height: 100%;
 
-  .title {
-    height: 50px;
-    line-height: 50px;
-    padding: 0 12px;
-    box-sizing: border-box;
-    color: #999999;
-  }
-
-  .message-card {
-    padding: 12px 12px 2px 12px;
-    margin-left: 12px;
-    min-height: 200px;
-    background: #FFFFFF;
-    border-radius: 6px;
-    width: calc(100% - 24px);
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-
-    .none {
-      line-height: 200px;
-      text-align: center;
-      font-size: 18px;
-      color: #999999;
+      .slide-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 6px;
+      }
     }
   }
 
   .card {
-    padding: 0 12px;
-    margin: 10px 0 20px 0;
-    display: flex;
-    flex-wrap: wrap;
+    width: calc(100% - 24px);
+    min-height: 100px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    background: #FFFFFF;
+    margin: 20px auto;
+    border-radius: 6px;
+    padding: 10px;
+    box-sizing: border-box;
 
-    .item {
-      width: calc(50% - 5px);
-      height: 150px;
+    .title {
+      height: 50px;
+      line-height: 50px;
+    }
+
+    .content {
       display: flex;
-      justify-content: space-between;
-      background: #FFFFFF;
-      border-radius: 6px;
-      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
-      margin-top: 10px;
-      padding: 0 20px;
-      box-sizing: border-box;
+      flex-wrap: wrap;
+      margin-top: 12px;
 
-      .add {
-        font-size: 50px;
-        font-weight: 200;
-        line-height: 150px;
-      }
+      .item {
+        width: 30%;
+        height: 80px;
+        text-align: center;
+        margin-right: 5%;
+        margin-bottom: 10px;
 
-      .left {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        .image {
-          height: 50px;
-          width: 50px;
-          margin-bottom: 20px;
+        .text {
+          line-height: 30px;
+          color: #259D8F;
         }
       }
-    }
 
-    .item:nth-child(2n + 1) {
-      margin-right: 10px;
+      .item:nth-child(3n) {
+        margin-right: 0;
+      }
     }
-  }
-  .van-notice-bar {
-    margin-bottom: 10px;
   }
 }

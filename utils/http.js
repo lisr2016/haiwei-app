@@ -2,7 +2,7 @@ function ajax(url,data,method, all = false, header = { token: wx.getStorageSync(
   const pages = getCurrentPages();
   const token = wx.getStorageSync('token')
   const currentPage = pages[pages.length - 1];
-  if(!token && currentPage.route !== 'pages/Login/Login'){
+  if(!token && currentPage.route !== 'pages/Login/Login' && currentPage.route !== 'pages/register/register'){
     wx.navigateTo({ url: `/pages/Login/Login` });
     return
   }

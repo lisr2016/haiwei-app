@@ -1,29 +1,31 @@
 <view class="home">
-  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
-    <block wx:for="{{ movies }}" wx:key="index">
-      <swiper-item class="swiper-item">
-        <image src="{{ item.url }}" class="slide-image" mode="aspectFill" />
-      </swiper-item>
-    </block>
-  </swiper>
+  <view class="header">
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+      <block wx:for="{{ movies }}" wx:key="index">
+        <swiper-item class="swiper-item">
+          <image src="{{ item.url }}" class="slide-image" mode="aspectFill" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
   <view class="card">
-    <view wx:for="{{ card }}" wx:key="index" class="item" bindtap="jump" data-currentData="{{ item }}">
-      <view class="left">
-        <image class="image" src="{{ item.img }}" mode="aspectFill" />
-        <text>{{ item.label }}</text>
-      </view>
-      <text class="add">+</text>
-    </view>
-  </view>
-  <view class="title">消息列表</view>
-  <view class="message-card">
-    <view wx:if="{{ message.length }}">
-      <view wx:for="{{ message }}" wx:key="index">
-        <van-notice-bar left-icon="info-o" text="{{ item.title }}" bindtap="jumpToDetail" data-message="{{ item }}" />
+    <view class="title van-hairline--bottom">常用模块</view>
+    <view class="content">
+      <view wx:for="{{ card }}" wx:key="index" class="item" bindtap="jump" data-currentData="{{ item }}">
+        <van-icon name="{{ item.icon }}" size="30" color="#259D8F" />
+        <view class="text">{{ item.label }}</view>
       </view>
     </view>
-    <view wx:else class="none">
-      暂无消息
-    </view>
   </view>
+  <!--  <view class="title">消息列表</view>-->
+  <!--  <view class="message-card">-->
+  <!--    <view wx:if="{{ message.length }}">-->
+  <!--      <view wx:for="{{ message }}" wx:key="index">-->
+  <!--        <van-notice-bar left-icon="info-o" text="{{ item.title }}" bindtap="jumpToDetail" data-message="{{ item }}" />-->
+  <!--      </view>-->
+  <!--    </view>-->
+  <!--    <view wx:else class="none">-->
+  <!--      暂无消息-->
+  <!--    </view>-->
+  <!--  </view>-->
 </view>
