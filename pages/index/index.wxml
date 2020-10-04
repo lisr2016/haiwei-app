@@ -12,7 +12,8 @@
     <view class="title van-hairline--bottom">常用模块</view>
     <view class="content">
       <view wx:for="{{ card }}" wx:key="index" class="item" bindtap="jump" data-currentData="{{ item }}">
-        <van-icon name="{{ item.icon }}" size="30" color="#259D8F" />
+        <van-icon wx:if="{{ item.label === '未读消息' }}" name="{{ item.icon }}" size="30" color="#259D8F" info="{{ info }}" />
+        <van-icon wx:else name="{{ item.icon }}" size="30" color="#259D8F" />
         <view class="text">{{ item.label }}</view>
       </view>
     </view>

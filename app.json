@@ -27,7 +27,8 @@
     "van-switch": "/miniprogram_npm/@vant/weapp/switch/index",
     "van-toast": "/miniprogram_npm/@vant/weapp/toast/index",
     "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
-    "van-notice-bar": "/miniprogram_npm/@vant/weapp/notice-bar/index"
+    "van-notice-bar": "/miniprogram_npm/@vant/weapp/notice-bar/index",
+    "van-empty": "/miniprogram_npm/@vant/weapp/empty/index"
   },
   "window":{
     "backgroundTextStyle":"light",
