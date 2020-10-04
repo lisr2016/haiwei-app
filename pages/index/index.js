@@ -15,7 +15,7 @@ Page({
       { label: '考核验证', url: '../CreatedAssessment/CreatedAssessment', icon: 'exchange' },
       { label: '未读消息', url: '../message/message?type=1', icon: 'chat-o' },
       { label: '已读消息', url: '../message/message?type=0', icon: 'comment-o' },
-      { label: '政策发布', url: '../medicineRubbish/medicineRubbish', icon: 'add-o' },
+      { label: '政策发布', url: '../policyList/policyList', icon: 'add-o' },
       // { label: '新建考核', url: '../CreatedAssessment/CreatedAssessment' },
       // { label: '量化填报', url: '../Reporting/Reporting' },
       // { label: '考核模版', url: '../AssessmentTemplate/AssessmentTemplate' },

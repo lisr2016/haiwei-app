@@ -12,7 +12,8 @@
     "pages/perfect/perfect",
     "pages/register/register",
     "pages/message/message",
-    "pages/messageDetail/messageDetail"
+    "pages/messageDetail/messageDetail",
+    "pages/policyList/policyList"
   ],
   "usingComponents": {
     "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
