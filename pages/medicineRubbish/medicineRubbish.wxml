@@ -14,7 +14,7 @@
   </van-popup>
 
   <view class="footer">
-    <van-button class="btn" type="info" block bindtap="submit">提交</van-button>
+    <van-button class="btn" color="#259D8F" type="info" block bindtap="submit">提交</van-button>
   </view>
   <van-toast id="van-toast" />
 </view>

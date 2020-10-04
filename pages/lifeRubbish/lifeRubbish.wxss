@@ -3,4 +3,5 @@
 }
 .life-rubbish .van-tabs {
   margin-bottom: 10px;
+  margin-top: 20px;
 }

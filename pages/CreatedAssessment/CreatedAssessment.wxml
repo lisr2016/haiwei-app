@@ -16,7 +16,10 @@
     <view class="divider" />
     <van-field label="考核内容" value="{{ form.content }}" placeholder="请选择考核内容" readonly clickable is-link data-show="content" border="{{ false }}" bindtap="showPicker" />
   </van-cell-group>
-  <van-button type="info" bindtap="created">生成考核任务</van-button>
+  <view class="footer">
+    <van-button class="btn" block color="#259D8F" type="info" bindtap="save" disabled="{{ active === 0 }}">保存</van-button>
+    <van-button class="btn" block color="#259D8F" type="info" bindtap="submit">提交</van-button>
+  </view>
 
   <van-popup show="{{ show.time }}" position="bottom" custom-style="height: 50%" bind:close="close">
     <van-datetime-picker type="date" value="{{ show.isStart ? form.start : form.end }}" title="请选择{{ show.isStart ? '开始' : '结束' }}时间" bind:confirm="confirm" bind:cancel="close" />

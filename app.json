@@ -1,6 +1,5 @@
 {
   "pages":[
-    "pages/register/register",
     "pages/index/index",
     "pages/CreatedAssessment/CreatedAssessment",
     "pages/Reporting/Reporting",
@@ -11,6 +10,7 @@
     "pages/lifeRubbish/lifeRubbish",
     "pages/Login/Login",
     "pages/perfect/perfect",
+    "pages/register/register",
     "pages/message/message"
   ],
   "window":{

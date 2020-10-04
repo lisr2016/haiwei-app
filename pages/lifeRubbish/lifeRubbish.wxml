@@ -1,5 +1,5 @@
 <view class="life-rubbish">
-  <van-tabs type="card" active="{{ active }}" color="#1989FA" bind:change="onChange">
+  <van-tabs type="card" active="{{ active }}" color="#259D8F" bind:change="onChange">
     <van-tab wx:for="{{ tabs }}" wx:key="index" title="{{ item.label }}" name="{{ item.id }}" />
   </van-tabs>
   <day-table wx:if="{{ active === 0 }}" />

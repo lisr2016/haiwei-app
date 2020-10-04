@@ -1,6 +1,13 @@
 <view class="message">
-  <view class="card">
-    <view class="title">{{ message.title }}</view>
-    <view class="content">{{ message.content }}</view>
+  <view class="content">
+    <view wx:for="{{ 4 }}" wx:key="{{ item }}" class="item van-hairline--bottom">
+      <view class="left">
+        <view class="title">测试消息title</view>
+        <view class="time">2020年10月08号</view>
+      </view>
+      <view class="right">
+        <van-button>查看</van-button>
+      </view>
+    </view>
   </view>
 </view>

@@ -20,7 +20,7 @@
       <van-field title-width="130px" required label="主要涉及问题:" bind:blur="input" data-name="selfContent" type="textarea" value="{{ form.selfContent }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
       <view class="switch">
         <view class="label">是否整改到位</view>
-        <van-switch checked="{{ form.selfCorrected }}" data-name="selfCorrected" size="20px" bind:change="onChange" />
+        <van-switch active-color="#259D8F" checked="{{ form.selfCorrected }}" data-name="selfCorrected" size="20px" bind:change="onChange" />
       </view>
     </view>
   </view>
@@ -50,7 +50,7 @@
       <van-field title-width="130px" required label="主要涉及问题:" type="textarea" bind:blur="input" data-name="govContent" value="{{ form.govContent }}" placeholder="请输入主要涉及问题" border="{{ false }}" />
       <view class="switch">
         <view class="label">是否整改到位</view>
-        <van-switch checked="{{ form.govCorrected }}" data-name="govCorrected" size="20px" bind:change="onChange" />
+        <van-switch checked="{{ form.govCorrected }}" active-color="#259D8F" data-name="govCorrected" size="20px" bind:change="onChange" />
       </view>
     </view>
   </view>
@@ -60,7 +60,7 @@
   </van-popup>
 
   <view class="footer">
-    <van-button class="btn" block type="info" bindtap="up" disabled="{{ active === 0 }}">上一步</van-button>
-    <van-button class="btn" block type="info" bindtap="next">{{ active === 4 ? '提交' : '下一步'}}</van-button>
+    <van-button class="btn" block color="#259D8F" type="info" bindtap="up" disabled="{{ active === 0 }}">上一步</van-button>
+    <van-button class="btn" block color="#259D8F" type="info" bindtap="next">{{ active === 4 ? '提交' : '下一步'}}</van-button>
   </view>
 </view>

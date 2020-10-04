@@ -11,9 +11,9 @@ Page({
     card: [
       { label: '生活垃圾', url: '../lifeRubbish/lifeRubbish', icon: 'delete' },
       { label: '医疗垃圾', url: '../medicineRubbish/medicineRubbish', icon: 'qr' },
-      { label: '考核验证', url: '../medicineRubbish/medicineRubbish', icon: 'exchange' },
-      { label: '已读消息', url: '../medicineRubbish/medicineRubbish', icon: 'comment-o' },
-      { label: '未读消息', url: '../medicineRubbish/medicineRubbish', icon: 'chat-o' },
+      { label: '考核验证', url: '../CreatedAssessment/CreatedAssessment', icon: 'exchange' },
+      { label: '已读消息', url: '../message/message?type=0', icon: 'comment-o' },
+      { label: '未读消息', url: '../message/message?type=1', icon: 'chat-o' },
       { label: '政策发布', url: '../medicineRubbish/medicineRubbish', icon: 'add-o' },
       // { label: '新建考核', url: '../CreatedAssessment/CreatedAssessment' },
       // { label: '量化填报', url: '../Reporting/Reporting' },
@@ -29,7 +29,7 @@ Page({
       this.getUserInfo().then(res => {
         wx.setStorageSync('user', res.orgInfo);
         this.setData({ hasUserInfo: true })
-        if (!res.orgInfo.initialized) {
+        if (!res.orgInfo?.initialized) {
           wx.navigateTo({ url: `/pages/perfect/perfect` })
         }
       })

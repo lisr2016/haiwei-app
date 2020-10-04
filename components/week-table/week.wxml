@@ -45,6 +45,6 @@
   </van-popup>
 </view>
 <view class="footer van-hairline--top">
-  <van-button type="info" class="btn" block bindtap="up" disabled="{{ active === 0 }}">上一步</van-button>
-  <van-button type="info" class="btn" block bindtap="next">{{ active === 2 ? '提交' : '下一步'}}</van-button>
+  <van-button type="info" color="#259D8F" class="btn" block bindtap="up" disabled="{{ active === 0 }}">上一步</van-button>
+  <van-button type="info" color="#259D8F" class="btn" block bindtap="next">{{ active === 2 ? '提交' : '下一步'}}</van-button>
 </view>
