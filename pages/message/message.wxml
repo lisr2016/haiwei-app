@@ -1,13 +1,8 @@
 <view class="message">
-  <view class="content">
-    <view wx:for="{{ 4 }}" wx:key="{{ item }}" class="item van-hairline--bottom">
-      <view class="left">
-        <view class="title">测试消息title</view>
-        <view class="time">2020年10月08号</view>
-      </view>
-      <view class="right">
-        <van-button>查看</van-button>
-      </view>
+  <view wx:if="{{ list.length }}" class="content">
+    <view wx:for="{{ list }}" wx:key="index" class="item van-hairline--bottom" data-id="{{item.id}}" bindtap="jump">
+      <view class="title">{{ item.content }}</view>
+      <view class="time">{{ item.time }}</view>
     </view>
   </view>
 </view>

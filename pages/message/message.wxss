@@ -12,26 +12,14 @@
 }
 .message .content .item {
   height: 60px;
-  display: flex;
 }
-.message .content .item .left {
-  width: calc(100% - 80px);
-}
-.message .content .item .left .title {
+.message .content .item .title {
   font-size: 16px;
   color: #333333;
   line-height: 30px;
 }
-.message .content .item .left .time {
+.message .content .item .time {
   font-size: 12px;
   color: #999999;
   line-height: 30px;
-}
-.message .content .item .right {
-  width: 80px;
-}
-.message .content .item .right .van-button {
-  width: 100%;
-  height: 30px;
-  margin-top: 15px;
 }

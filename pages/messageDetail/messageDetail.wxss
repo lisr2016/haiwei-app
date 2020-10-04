@@ -1,0 +1,31 @@
+.message-detail {
+  background: #FFFFFF;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.message-detail .header {
+  height: 70px;
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+}
+.message-detail .header .title {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 30px;
+}
+.message-detail .header .time {
+  font-size: 12px;
+  color: #999999;
+}
+.message-detail .content {
+  min-height: calc(100vh - 114px);
+  margin-bottom: 44px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+.message-detail .footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}

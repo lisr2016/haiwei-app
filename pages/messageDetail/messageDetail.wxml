@@ -1,0 +1,11 @@
+<view class="message-detail">
+  <view class="header van-hairline--bottom">
+    <view class="title van-ellipsis">{{ detail.title }}</view>
+    <view class="time">{{ detail.time }}</view>
+  </view>
+  <view class="content">{{ detail.content }}</view>
+
+  <view wx:if="{{ detail.type !== '1' }}" class="footer">
+    <van-button type="info" block color="#259D8F" bindtap="jump">去提交</van-button>
+  </view>
+</view>

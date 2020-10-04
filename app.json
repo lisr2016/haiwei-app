@@ -11,8 +11,24 @@
     "pages/Login/Login",
     "pages/perfect/perfect",
     "pages/register/register",
-    "pages/message/message"
+    "pages/message/message",
+    "pages/messageDetail/messageDetail"
   ],
+  "usingComponents": {
+    "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+    "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-radio": "/miniprogram_npm/@vant/weapp/radio/index",
+    "van-radio-group": "/miniprogram_npm/@vant/weapp/radio-group/index",
+    "van-field": "/miniprogram_npm/@vant/weapp/field/index",
+    "van-popup": "/miniprogram_npm/@vant/weapp/popup/index",
+    "van-datetime-picker": "/miniprogram_npm/@vant/weapp/datetime-picker/index",
+    "van-picker": "/miniprogram_npm/@vant/weapp/picker/index",
+    "van-button": "/miniprogram_npm/@vant/weapp/button/index",
+    "van-switch": "/miniprogram_npm/@vant/weapp/switch/index",
+    "van-toast": "/miniprogram_npm/@vant/weapp/toast/index",
+    "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
+    "van-notice-bar": "/miniprogram_npm/@vant/weapp/notice-bar/index"
+  },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#259D8F",

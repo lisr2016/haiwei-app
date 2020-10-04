@@ -7,14 +7,6 @@ Page({
     show: false,
     minDate: new Date("2020/01/01 00:00:00").getTime(),
   },
-  onLoad(options) {
-    console.log(options)
-    if (options && options.id) {
-      ajax(`/v1/message/${options.id}`, null).then(res => {
-        console.log(res)
-      })
-    }
-  },
   input(e) {
     const inputModel = e.currentTarget.dataset.name;
     const value = e.detail.value;

@@ -15,9 +15,6 @@ Page({
       wx.setNavigationBarTitle({
         title: `生活垃圾-${ this.data.tabs[options.type].label }`
       })
-      ajax(`/v1/message/${options.id}`, null).then(res => {
-        console.log(res)
-      })
     }
   },
   onChange(e) {

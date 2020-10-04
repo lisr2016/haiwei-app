@@ -17,15 +17,4 @@
       </view>
     </view>
   </view>
-  <!--  <view class="title">消息列表</view>-->
-  <!--  <view class="message-card">-->
-  <!--    <view wx:if="{{ message.length }}">-->
-  <!--      <view wx:for="{{ message }}" wx:key="index">-->
-  <!--        <van-notice-bar left-icon="info-o" text="{{ item.title }}" bindtap="jumpToDetail" data-message="{{ item }}" />-->
-  <!--      </view>-->
-  <!--    </view>-->
-  <!--    <view wx:else class="none">-->
-  <!--      暂无消息-->
-  <!--    </view>-->
-  <!--  </view>-->
 </view>

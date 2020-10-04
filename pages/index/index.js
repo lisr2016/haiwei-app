@@ -21,7 +21,6 @@ Page({
       // { label: '量化报表', url: '../QuantifyTable/QuantifyTable' },
       // { label: '工作记录', url: '../WorkRecording/WorkRecording' },
     ],
-    message: []
   },
   onLoad: async function () {
     const user = wx.getStorageSync('user');
@@ -37,20 +36,6 @@ Page({
       this.setData({ hasUserInfo: true })
     }
   },
-  jumpToDetail(e) {
-    const { type, id, content, title } = e.currentTarget.dataset.message
-    const mock = {
-      '1': `../message/message`,
-      '2': `../lifeRubbish/lifeRubbish?type=0&id=${id}`,
-      '3': `../lifeRubbish/lifeRubbish?type=1&id=${id}`,
-      '4': `../lifeRubbish/lifeRubbish?type=2&id=${id}`,
-      '5': `../medicineRubbish/medicineRubbish?id=${id}`,
-    }
-    if (type === '1') {
-      wx.setStorageSync('message', { content, title });
-    }
-    wx.redirectTo({ url: mock[type] })
-  },
   onShow() {
     if (this.data.hasUserInfo) {
       const user = wx.getStorageSync('user');
@@ -58,16 +43,10 @@ Page({
         wx.navigateTo({ url: `/pages/perfect/perfect` })
       }
     }
-    // this.getMessage().then(res => {
-    //   this.setData({ message: res })
-    // })
   },
   jump(e) {
     const { url } = e.currentTarget.dataset.currentdata
     wx.navigateTo({ url })
-  },
-  getMessage() {
-    return ajax('/v1/message/list', null)
   },
   getUserInfo() {
     return ajax('/v1/user/info', null)

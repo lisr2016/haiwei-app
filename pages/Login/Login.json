@@ -1,11 +1,4 @@
 {
-  "usingComponents": {
-    "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
-    "van-notice-bar": "/miniprogram_npm/@vant/weapp/notice-bar/index",
-    "van-field": "/miniprogram_npm/@vant/weapp/field/index",
-    "van-button": "/miniprogram_npm/@vant/weapp/button/index",
-    "van-switch": "/miniprogram_npm/@vant/weapp/switch/index",
-    "van-toast": "/miniprogram_npm/@vant/weapp/toast/index"
-  },
+  "usingComponents": {},
   "navigationBarTitleText": "海卫后勤系统"
 }
