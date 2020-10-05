@@ -1,10 +1,8 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/CreatedAssessment/CreatedAssessment",
-    "pages/Reporting/Reporting",
+    "pages/assessmentList/assessmentList",
     "pages/QuantifyTable/QuantifyTable",
-    "pages/AssessmentTemplate/AssessmentTemplate",
     "pages/ResetPassword/ResetPassword",
     "pages/medicineRubbish/medicineRubbish",
     "pages/lifeRubbish/lifeRubbish",
@@ -13,7 +11,9 @@
     "pages/register/register",
     "pages/message/message",
     "pages/messageDetail/messageDetail",
-    "pages/policyList/policyList"
+    "pages/policyList/policyList",
+    "pages/assessmentDetail/assessmentDetail",
+    "pages/assessmentContent/assessmentContent"
   ],
   "usingComponents": {
     "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
@@ -29,7 +29,8 @@
     "van-toast": "/miniprogram_npm/@vant/weapp/toast/index",
     "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
     "van-notice-bar": "/miniprogram_npm/@vant/weapp/notice-bar/index",
-    "van-empty": "/miniprogram_npm/@vant/weapp/empty/index"
+    "van-empty": "/miniprogram_npm/@vant/weapp/empty/index",
+    "van-uploader": "/miniprogram_npm/@vant/weapp/uploader/index"
   },
   "window":{
     "backgroundTextStyle":"light",

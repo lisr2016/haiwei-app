@@ -1,0 +1,10 @@
+<view wx:if="{{ list.length }}" class="message">
+  <view class="content">
+    <view wx:for="{{ list }}" wx:key="index" class="item van-hairline--bottom" data-index="{{index}}" bindtap="jump">
+      <view class="title">{{ item.name }}</view>
+      <view class="time">{{ item.startTime }}到{{ item.endTime }}</view>
+    </view>
+  </view>
+
+</view>
+<van-empty wx:else description="暂无数据" />

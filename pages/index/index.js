@@ -12,25 +12,23 @@ Page({
     card: [
       { label: '生活垃圾', url: '../lifeRubbish/lifeRubbish', icon: 'delete' },
       { label: '医疗垃圾', url: '../medicineRubbish/medicineRubbish', icon: 'qr' },
-      { label: '考核验证', url: '../CreatedAssessment/CreatedAssessment', icon: 'exchange' },
+      { label: '考核验证', url: '../assessmentList/assessmentList', icon: 'exchange' },
       { label: '未读消息', url: '../message/message?type=1', icon: 'chat-o' },
       { label: '已读消息', url: '../message/message?type=0', icon: 'comment-o' },
       { label: '政策发布', url: '../policyList/policyList', icon: 'add-o' },
-      // { label: '新建考核', url: '../CreatedAssessment/CreatedAssessment' },
-      // { label: '量化填报', url: '../Reporting/Reporting' },
-      // { label: '考核模版', url: '../AssessmentTemplate/AssessmentTemplate' },
-      // { label: '量化报表', url: '../QuantifyTable/QuantifyTable' },
-      // { label: '工作记录', url: '../WorkRecording/WorkRecording' },
     ],
   },
   onLoad: async function () {
     const user = wx.getStorageSync('user');
     if (!user) {
       this.getUserInfo().then(res => {
-        wx.setStorageSync('user', res.orgInfo);
-        this.setData({ hasUserInfo: true })
-        if (!res.orgInfo?.initialized) {
-          wx.navigateTo({ url: `/pages/perfect/perfect` })
+        if (res && res.orgInfo) {
+          wx.setStorageSync('user', res.orgInfo);
+          this.setData({ hasUserInfo: true })
+
+          if (!res.orgInfo.initialized) {
+            wx.navigateTo({ url: `/pages/perfect/perfect` })
+          }
         }
       })
     } else {
@@ -45,11 +43,13 @@ Page({
       }
     }
     ajax('/v1/message/list', null).then(res => {
-      const list = res.map(item => Object.assign({}, item, { time: this.formatUTC(item.createTime) }))
-      wx.setStorageSync('messageList', list)
-      this.setData({
-        info: list.filter(item => item.isRead === false).length,
-      })
+      if (res) {
+        const list = res.map(item => Object.assign({}, item, { time: this.formatUTC(item.createTime) }))
+        wx.setStorageSync('messageList', list)
+        this.setData({
+          info: list.filter(item => item.isRead === false).length,
+        })
+      }
     })
   },
   jump(e) {

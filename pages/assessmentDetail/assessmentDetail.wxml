@@ -1,0 +1,24 @@
+<view class="assessment-detail">
+  <view class="title">基本信息</view>
+  <view class="info">
+    <van-cell-group>
+      <van-cell title="考核类型" title-width="70px" value="互相考核" />
+      <van-cell title="考核单位" title-width="70px" value="{{ detail.assessorOrgName  }}" />
+      <van-cell title="考核对象" title-width="70px" value="{{ detail.assesseeOrgName }}" />
+      <van-cell title="考核名称" title-width="70px" value="{{ detail.name }}" />
+      <van-cell title="考核目标" title-width="70px" value="{{ detail.target }}" />
+      <van-cell title="考核周期" title-width="70px" border="{{ false }}" value="{{ detail.startTime }}至{{ detail.endTime }}" />
+    </van-cell-group>
+  </view>
+  <view class="title">考核内容</view>
+  <view class="content">
+    <van-cell-group>
+      <van-cell wx:for="{{ detail.content }}" title="{{ item }}" wx:key="index" center>
+        <van-button size="mini" data-index="{{ index }}" bindtap="solve">处理</van-button>
+      </van-cell>
+    </van-cell-group>
+  </view>
+  <view class="footer van-hairline--top">
+    <van-button class="btn" block color="#259D8F" type="info" bindtap="submit">完成考核</van-button>
+  </view>
+</view>
