@@ -19,6 +19,6 @@
     </view>
   </view>
   <view class="footer">
-    <van-button block type="info" color="#259D8F">退出登录</van-button>
+    <van-button block type="info" color="#259D8F" bindtap="logout">退出登录</van-button>
   </view>
 </view>

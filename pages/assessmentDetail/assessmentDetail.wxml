@@ -21,4 +21,6 @@
   <view class="footer van-hairline--top">
     <van-button class="btn" block color="#259D8F" type="info" bindtap="submit">完成考核</van-button>
   </view>
+  <van-toast id="van-toast" />
+
 </view>

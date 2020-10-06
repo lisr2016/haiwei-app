@@ -1,14 +1,23 @@
 <view class="assessment-content">
- <van-cell-group>
-  <van-cell title="考核项" center value="{{ value }}" :border="{{ false }}" />
-  <van-field
-    value="{{ message }}"
-    label="留言"
-    type="textarea"
-    placeholder="请输入留言"
-    autosize="{{ params }}"
-  />
-  <van-uploader file-list="{{ fileList }}" bind:after-read="afterRead" />
- </van-cell-group>
+ <van-cell title="考核项" center value="{{ value }}" :border="{{ false }}" />
+ <van-field
+   value="{{ form.description }}"
+   label="文字说明"
+   type="textarea"
+   placeholder="请输入"
+   autosize="{{ params }}"
+   bind:blur="input"
+   :border="{{ false }}"
+ />
+ <view class="upload">
+  <view class="title">上传图片</view>
+  <van-uploader :border="{{ false }}" file-list="{{ fileList }}" bind:delete="deleteImg" multiple="{{true}}" bind:after-read="afterRead" />
+ </view>
+
+ <view class="footer">
+  <van-button class="btn" color="#259D8F" type="info" block bindtap="submit">提交</van-button>
+ </view>
+
+ <van-toast id="van-toast" />
 
 </view>

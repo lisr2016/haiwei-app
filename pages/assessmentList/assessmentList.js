@@ -11,7 +11,8 @@ Page({
   },
   jump(e) {
     const index = e.currentTarget.dataset.index
-    wx.setStorageSync('currentAssessment', this.data.list[index]);
+    const data = this.data.list[index]
+    wx.setStorageSync('currentAssessment', Object.assign({}, data, { params: data.content.map(() => ({ description: '', urls: [] })) }));
     wx.navigateTo({ url: '../assessmentDetail/assessmentDetail'})
   },
 })

@@ -78,4 +78,9 @@ Page({
     // 时间戳转为时间
     return new Date(parseInt(timestamp) * 1000).toLocaleString().replace(/年|月/g, '-').replace(/日/g, ' ')
   },
+
+  logout() {
+    wx.clearStorageSync()
+    wx.redirectTo({ url: '/pages/Login/Login' })
+  }
 })
