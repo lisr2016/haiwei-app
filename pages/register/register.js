@@ -8,7 +8,8 @@ Page({
       phone: '',
       password: '',
       verifyCode:'',
-      organizationId: ''
+      organizationId: '',
+      psd: ''
     },
     organization: '',
     checked: false,
@@ -58,37 +59,23 @@ Page({
   organizationInput(e) {
     this.setData({ organization: e.detail.value });
   },
-  // 输入框简易双向绑定
   input(e) {
     const inputModel = e.currentTarget.dataset.name;
     const value = e.detail.value;
     this.setData({ [`form.${inputModel}`]: value });
   },
-  change(e) {
-    if (e.detail.length === 4) {
-      ajax('/check/verifyCode', { phone: this.data.form.phone, verifyCode: e.detail }, 'get', false, { cookie: wx.getStorageSync("sessionid") }).then(() => {
-        this.setData({ isCheck: true })
-      })
-    }
-  },
-  // 登录
   goRegister() {
     if (!this.data.form.phone) return Toast.fail('请输入手机号');
     if (!this.data.form.password) return Toast.fail('请输入密码');
     if (!this.data.form.verifyCode) return Toast.fail('请输入验证码');
     if (!this.data.form.organizationId) return Toast.fail('请输入机构名称');
-
-    // 如果验证码校验成功
-    if (this.data.isCheck) {
-      const { phone, password, organizationId } = this.data.form
-      const params = { phone, password, organizationId }
-      ajax('/signup', params, 'post').then(res => {
-        wx.setStorageSync('token', res.token)
-        wx.navigateTo({ url: `/pages/index/index` })
-      })
-    } else {
-      Toast.fail('验证码校验错误,请检查验证码！');
-    }
+    if (this.data.form.psd !== this.data.form.password) return Toast.fail('两次密码不一致，请检查密码');
+    const { phone, password, organizationId, verifyCode } = this.data.form
+    const params = { phone, password, organizationId, verifyCode }
+    ajax('/signup', params, 'post', false, { cookie: wx.getStorageSync("sessionid") }).then(res => {
+      wx.setStorageSync('token', res.token)
+      wx.navigateTo({ url: `/pages/index/index` })
+    })
   },
   search() {
     if (this.data.organization !== '') {

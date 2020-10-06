@@ -11,7 +11,7 @@ Page({
         console.log(filePath)
         wx.openDocument({
           filePath,
-          showMenu: false,  //是否显示右上角菜单按钮  默认为false
+          showMenu: true,  //是否显示右上角菜单按钮  默认为false
           success: function (res) {
             console.log('打开网络文档成功')
           },

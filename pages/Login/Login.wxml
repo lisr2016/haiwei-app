@@ -27,11 +27,10 @@
     <van-field
       value="{{ form.verifyCode }}"
       type="number"
-      left-icon	= "browsing-history-o"
+      left-icon= "bulb-o"
       placeholder="请输入验证码"
       class="item"
       bind:blur="input"
-      bind:change="change"
       data-name="verifyCode"
       use-button-slot
     >

@@ -23,9 +23,18 @@
       class="item"
     />
     <van-field
-      value="{{ organization }}"
+      value="{{ form.psd }}"
       type="text"
       left-icon="browsing-history-o"
+      placeholder="请再次输入密码"
+      bind:blur="input"
+      data-name="psd"
+      class="item"
+    />
+    <van-field
+      value="{{ organization }}"
+      type="text"
+      left-icon="friends-o"
       right-icon="search"
       placeholder="请输入机构关键词"
       bind:blur="organizationInput"
@@ -35,11 +44,10 @@
     <van-field
       value="{{ form.verifyCode }}"
       type="number"
-      left-icon	= "browsing-history-o"
+      left-icon= "bulb-o"
       placeholder="请输入验证码"
       class="item"
       bind:blur="input"
-      bind:change="change"
       data-name="verifyCode"
       use-button-slot
     >

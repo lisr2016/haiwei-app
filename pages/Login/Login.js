@@ -61,34 +61,29 @@ Page({
     const value = e.detail.value;
     this.setData({ [`form.${inputModel}`]: value });
   },
-  change(e) {
-    if (e.detail.length === 4) {
-      ajax('/check/verifyCode', { phone: this.data.form.phone, verifyCode: e.detail }, 'get', false, { cookie: wx.getStorageSync("sessionid") }).then(() => {
-        this.setData({ isCheck: true })
-      })
-    }
-  },
+  // change(e) {
+  //   if (e.detail.length === 4) {
+  //     ajax('/check/verifyCode', { phone: this.data.form.phone, verifyCode: e.detail }, 'get', false, { cookie: wx.getStorageSync("sessionid") }).then(() => {
+  //       this.setData({ isCheck: true })
+  //     })
+  //   }
+  // },
   // 登录
   login() {
     if (!this.data.form.phone) return Toast.fail('请输入手机号');
     if (!this.data.form.password) return Toast.fail('请输入密码');
     if (!this.data.form.verifyCode) return Toast.fail('请输入验证码');
 
-    // 如果选择记住密码
-    if (this.data.checked) {
-      const { password, phone } = this.data.form
-      wx.setStorageSync('account', { password, phone })
-    }
+    // // 如果选择记住密码
+    // if (this.data.checked) {
+    //   const { password, phone } = this.data.form
+    //   wx.setStorageSync('account', { password, phone })
+    // }
 
-    // 如果验证码校验成功
-    if (this.data.isCheck) {
-      ajax('/login', { phone: this.data.form.phone, password: this.data.form.password }, 'post').then(res => {
-        wx.setStorageSync('token', res.token)
-        wx.navigateTo({ url: `/pages/index/index` })
-      })
-    } else {
-      Toast.fail('验证码校验错误,请检查验证码！');
-    }
+    ajax('/login', this.data.form, 'post', false, { cookie: wx.getStorageSync("sessionid") }).then(res => {
+      wx.setStorageSync('token', res.token)
+      wx.navigateTo({ url: `/pages/index/index` })
+    })
   },
   register() {
     wx.navigateTo({ url: `/pages/register/register` })
