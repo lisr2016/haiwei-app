@@ -1,7 +1,7 @@
 <view class="message-detail">
   <view class="header van-hairline--bottom">
     <view class="title van-ellipsis">{{ detail.title }}</view>
-    <view class="time">{{ detail.time }}</view>
+    <view class="time">{{ detail.createTime }}</view>
   </view>
   <view class="content">{{ detail.content }}</view>
 

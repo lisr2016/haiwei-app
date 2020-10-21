@@ -2,7 +2,7 @@ import { ajax } from '../../utils/http'
 Page({
   data: {
     hasUserInfo: false,
-    info: 0,
+    info: 1,
     movies: [
       {url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600160596837&di=29400d565d240c627e7c43048bb0a7c1&imgtype=0&src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F03%2F28%2F90%2F5b7d5e5a6efa2_610.jpg'},
       {url: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2142142353,1341383433&fm=26&gp=0.jpg'},
@@ -15,7 +15,7 @@ Page({
       { label: '考核验证', url: '../assessmentList/assessmentList', icon: 'exchange' },
       { label: '未读消息', url: '../message/message?type=1', icon: 'chat-o' },
       { label: '已读消息', url: '../message/message?type=0', icon: 'comment-o' },
-      { label: '政策发布', url: '../policyList/policyList', icon: 'add-o' },
+      { label: '政策发布', url: '../policyList/policyList', icon: 'records' },
     ],
   },
   onLoad: async function () {
@@ -44,11 +44,13 @@ Page({
     }
     ajax('/v1/message/list', null).then(res => {
       if (res) {
-        const list = res.map(item => Object.assign({}, item, { time: this.formatUTC(item.createTime) }))
+        const list = res.map(item => Object.assign({}, item))
         wx.setStorageSync('messageList', list)
+        console.log(list)
         this.setData({
-          info: list.filter(item => item.isRead === false).length,
+          info: list.filter(item => !item.isRead).length,
         })
+        console.log(this.data.info)
       }
     })
   },

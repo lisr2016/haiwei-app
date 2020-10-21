@@ -41,7 +41,15 @@ Page({
     name: ''
   },
   onLoad() {
-    this.setData({ name: wx.getStorageSync('user').name })
+    const user = wx.getStorageSync('user')
+    Object.keys(this.data.form).forEach(key => {
+      if (key === 'level') {
+        this.setData({ 'form.level': this.data.levelValues[user[key]] })
+      } else {
+        this.setData({ [`form.${key}`]: user[key] })
+      }
+    })
+    this.setData({ name: user.name })
   },
   submit() {
     if (!this.data.form.managerPhone) return Toast.fail('请输入负责人电话');

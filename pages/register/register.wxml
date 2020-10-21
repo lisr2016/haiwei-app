@@ -13,31 +13,53 @@
       class="item"
       data-type="number"
     />
+<!--    <van-field-->
+<!--      value="{{ form.password }}"-->
+<!--      type="text"-->
+<!--      left-icon="browsing-history-o"-->
+<!--      placeholder="请输入密码"-->
+<!--      bind:blur="input"-->
+<!--      data-name="password"-->
+<!--      class="item"-->
+<!--    />-->
     <van-field
       value="{{ form.password }}"
-      type="text"
+      type="{{ isClosed ? 'password' : 'text' }}"
       left-icon="browsing-history-o"
+      right-icon="{{ isClosed ? 'closed-eye' : 'eye-o' }}"
       placeholder="请输入密码"
       bind:blur="input"
       data-name="password"
       class="item"
+      bind:click-icon="clickIcon"
     />
     <van-field
       value="{{ form.psd }}"
-      type="text"
+      type="{{ isPsdClosed ? 'password' : 'text' }}"
       left-icon="browsing-history-o"
+      right-icon="{{ isPsdClosed ? 'closed-eye' : 'eye-o' }}"
       placeholder="请再次输入密码"
       bind:blur="input"
       data-name="psd"
       class="item"
+      bind:click-icon="clickPsdIcon"
     />
+<!--    <van-field-->
+<!--      value="{{ form.psd }}"-->
+<!--      type="text"-->
+<!--      left-icon="browsing-history-o"-->
+<!--      placeholder="请再次输入密码"-->
+<!--      bind:blur="input"-->
+<!--      data-name="psd"-->
+<!--      class="item"-->
+<!--    />-->
     <van-field
       value="{{ organization }}"
       type="text"
       left-icon="friends-o"
       right-icon="search"
       placeholder="请输入机构关键词"
-      bind:blur="organizationInput"
+      bind:input="organizationInput"
       class="item"
       bind:click-icon="search"
     />

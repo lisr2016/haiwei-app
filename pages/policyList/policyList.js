@@ -1,18 +1,23 @@
+import { ajax } from '../../utils/http'
+
 Page({
   data: {
     list: [],
   },
   onLoad() {
+    ajax('/cms/get/policy/list', null,'post').then(res =>  {
+      this.setData({ list: res.list })
+    })
+  },
+  jump(e) {
     wx.downloadFile({
-      url: 'http://storage.xuetangx.com/public_assets/xuetangx/PDF/PlayerAPI_v1.0.6.pdf',
+      url: e.currentTarget.dataset.url,
       success: function (res) {
-        console.log(res)
         let filePath = res.tempFilePath; //微信临时文件路径
-        console.log(filePath)
         wx.openDocument({
           filePath,
-          showMenu: true,  //是否显示右上角菜单按钮  默认为false
-          success: function (res) {
+          showMenu: true,
+          success: function () {
             console.log('打开网络文档成功')
           },
           fail: function(error){

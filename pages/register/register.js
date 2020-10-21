@@ -11,6 +11,8 @@ Page({
       organizationId: '',
       psd: ''
     },
+    isClosed: true,
+    isPsdClosed: true,
     organization: '',
     checked: false,
     isCheck: false,
@@ -28,6 +30,12 @@ Page({
         checked: true
       })
     }
+  },
+  clickIcon() {
+    this.setData({ isClosed: !this.data.isClosed })
+  },
+  clickPsdIcon() {
+    this.setData({ isPsdClosed: !this.data.isPsdClosed })
   },
   // 记住密码切换
   onChange({ detail }) {
@@ -57,7 +65,7 @@ Page({
     })
   },
   organizationInput(e) {
-    this.setData({ organization: e.detail.value });
+    this.setData({ organization: e.detail });
   },
   input(e) {
     const inputModel = e.currentTarget.dataset.name;

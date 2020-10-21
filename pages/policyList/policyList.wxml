@@ -1,1 +1,10 @@
-<view>pdf预览</view>
+<view wx:if="{{ list.length }}" class="policy-list">
+  <view class="content">
+    <view wx:for="{{ list }}" wx:key="index" class="item van-hairline--bottom" data-url="{{item.url}}" bindtap="jump">
+      <view class="title ">{{ item.title }}</view>
+      <view class="time">{{ item.content }}</view>
+    </view>
+  </view>
+
+</view>
+<van-empty wx:else description="暂无消息" />
