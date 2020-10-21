@@ -9,23 +9,16 @@ Page({
       {url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600160520268&di=d25dc35f751f762da12878a6149ba995&imgtype=0&src=http%3A%2F%2Fwww.itmsc.cn%2Fuploads%2Fallimg%2F171125%2F112214D04_0.png'},
       {url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1600160701110&di=f75d9b16b73656f8f180b9f0b16ef85d&imgtype=0&src=http%3A%2F%2Fpic.51yuansu.com%2Fbackgd%2Fcover%2F00%2F46%2F01%2F5bfcc8c6bef5c.jpg%2521%2Ffw%2F780%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue'},
     ],
-    card: [
-      { label: '生活垃圾', url: '../lifeRubbish/lifeRubbish', icon: 'delete' },
-      { label: '医疗垃圾', url: '../medicineRubbish/medicineRubbish', icon: 'qr' },
-      { label: '考核验证', url: '../assessmentList/assessmentList', icon: 'exchange' },
-      { label: '未读消息', url: '../message/message?type=1', icon: 'chat-o' },
-      { label: '已读消息', url: '../message/message?type=0', icon: 'comment-o' },
-      { label: '政策发布', url: '../policyList/policyList', icon: 'records' },
-    ],
+    card: [],
   },
   onLoad: async function () {
     const user = wx.getStorageSync('user');
     if (!user) {
       this.getUserInfo().then(res => {
         if (res && res.orgInfo) {
-          wx.setStorageSync('user', res.orgInfo);
+          wx.setStorageSync('user', { ...res.orgInfo, type: res.type });
           this.setData({ hasUserInfo: true })
-
+          this.checkList(user.type)
           if (!res.orgInfo.initialized) {
             wx.navigateTo({ url: `/pages/perfect/perfect` })
           }
@@ -33,6 +26,7 @@ Page({
       })
     } else {
       this.setData({ hasUserInfo: true })
+      this.checkList(user.type)
     }
   },
   onShow() {
@@ -53,6 +47,17 @@ Page({
         console.log(this.data.info)
       }
     })
+  },
+  checkList(type) {
+    const card = [
+      { label: '生活垃圾', url: '../lifeRubbish/lifeRubbish', icon: 'delete', show: type !== '3' },
+      { label: '医疗垃圾', url: '../medicineRubbish/medicineRubbish', icon: 'qr', show: type !== '2' },
+      { label: '考核验证', url: '../assessmentList/assessmentList', icon: 'exchange', show: true },
+      { label: '未读消息', url: '../message/message?type=1', icon: 'chat-o', show: true },
+      { label: '已读消息', url: '../message/message?type=0', icon: 'comment-o', show: true },
+      { label: '政策发布', url: '../policyList/policyList', icon: 'records', show: true },
+    ].filter(item => item.show)
+    this.setData({ card })
   },
   jump(e) {
     const { url } = e.currentTarget.dataset.currentdata

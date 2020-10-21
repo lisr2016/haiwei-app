@@ -5,7 +5,7 @@ Page({
     list: [],
   },
   onLoad() {
-    ajax('/cms/get/policy/list', null,'post').then(res =>  {
+    ajax('/v1/get/policy/list', null,'get').then(res =>  {
       this.setData({ list: res.list })
     })
   },
