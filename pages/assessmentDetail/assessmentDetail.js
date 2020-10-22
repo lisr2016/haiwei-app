@@ -20,8 +20,7 @@ Page({
     params.forEach(item => {
       if (!item.urls.length) return Toast({ type: 'fail', context: this, message: '请完成所有内容处理' })
     })
-    ajax('/v1/upload/assess', { params, id, type }).then(res => {
-      console.log(res)
+    ajax('/v1/upload/assess', { params, id, type }, 'post').then(res => {
       Toast({ type: 'success', context: this, message: '提交成功' })
       wx.navigateTo({ url: '../assessmentList/assessmentList'})
     })
