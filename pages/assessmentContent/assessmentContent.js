@@ -28,7 +28,7 @@ Page({
     }
   },
   input(e) {
-    this.setData({ 'form.description': e.detail.value });
+    this.setData({ 'form.description': e.detail });
   },
   /**
    * @param {string} uploadFile 需要上传的文件
@@ -102,6 +102,7 @@ Page({
 
   submit() {
     this.setData({ 'form.urls': this.data.fileList.map(item => item.url) })
+    console.log(this.data.form.description)
     // if (!this.data.form.urls.length) return Toast({ type: 'fail', context: this, message: '请上传图片' })
     if (!this.data.form.description) return Toast({ type: 'fail', context: this, message: '请填写文字说明' });
 

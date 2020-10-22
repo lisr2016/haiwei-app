@@ -17,12 +17,18 @@ Page({
   },
   submit() {
     const { params, id, type } = wx.getStorageSync('currentAssessment')
+    let on = true
     params.forEach(item => {
-      if (!item.urls.length) return Toast({ type: 'fail', context: this, message: '请完成所有内容处理' })
+      if (!item.description) {
+        Toast({ type: 'fail', context: this, message: '请完成所有内容处理' })
+        on = false
+      }
     })
-    ajax('/v1/upload/assess', { params, id, type }, 'post').then(res => {
-      Toast({ type: 'success', context: this, message: '提交成功' })
-      wx.navigateTo({ url: '../assessmentList/assessmentList'})
-    })
+    if (on) {
+      ajax('/v1/upload/assess', { content: params, id, type }, 'post').then(res => {
+        Toast({ type: 'success', context: this, message: '提交成功' })
+        wx.navigateTo({ url: '../assessmentList/assessmentList'})
+      })
+    }
   }
 })

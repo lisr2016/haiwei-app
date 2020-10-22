@@ -6,7 +6,7 @@
    type="textarea"
    placeholder="请输入"
    autosize="{{ params }}"
-   bind:blur="input"
+   bind:input="input"
    :border="{{ false }}"
  />
  <view class="upload">
