@@ -18,7 +18,7 @@ Page({
         if (res && res.orgInfo) {
           wx.setStorageSync('user', { ...res.orgInfo, type: res.type });
           this.setData({ hasUserInfo: true })
-          this.checkList(user.type)
+          this.checkList(res.type)
           if (!res.orgInfo.initialized) {
             wx.navigateTo({ url: `/pages/perfect/perfect` })
           }
@@ -28,6 +28,7 @@ Page({
       this.setData({ hasUserInfo: true })
       this.checkList(user.type)
     }
+    console.log(user.type)
   },
   onShow() {
     if (this.data.hasUserInfo) {
