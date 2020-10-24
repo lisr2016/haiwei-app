@@ -2,7 +2,7 @@
  <van-cell title="考核项" center value="{{ value }}" :border="{{ false }}" />
  <van-field
    value="{{ form.description }}"
-   label="文字说明"
+   label="评价"
    type="textarea"
    placeholder="请输入"
    autosize="{{ params }}"

@@ -104,7 +104,7 @@ Page({
     this.setData({ 'form.urls': this.data.fileList.map(item => item.url) })
     console.log(this.data.form.description)
     // if (!this.data.form.urls.length) return Toast({ type: 'fail', context: this, message: '请上传图片' })
-    if (!this.data.form.description) return Toast({ type: 'fail', context: this, message: '请填写文字说明' });
+    if (!this.data.form.description) return Toast({ type: 'fail', context: this, message: '请填写评价' });
 
     const currentAssessment = this.data.currentAssessment
     currentAssessment['params'][this.data.index] = this.data.form
