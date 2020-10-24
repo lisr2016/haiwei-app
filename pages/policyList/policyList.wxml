@@ -2,7 +2,10 @@
   <view class="content">
     <view wx:for="{{ list }}" wx:key="index" class="item van-hairline--bottom" data-url="{{item.url}}" bindtap="jump">
       <view class="title ">{{ item.title }}</view>
-      <view class="time">{{ item.content }}</view>
+      <view class="time">
+        <view>{{ item.content }}</view>
+        <view>{{ item.createTime }}</view>
+      </view>
     </view>
   </view>
 
