@@ -10,6 +10,7 @@ Page({
       description: '',
       urls: [],
     },
+    uploadParams: { filename: '' },
     currentAssessment: [],
   },
   onLoad(option) {
@@ -41,6 +42,7 @@ Page({
         url: 'https://chiateocean.com.cn/hdhq/v1/upload/pic', // 上传的服务器接口地址
         filePath: uploadFile,
         header: { token: wx.getStorageSync('token') },
+        formData: this.data.uploadParams,
         name: 'file', //上传的所需字段，后端提供
         success: (res) => {
           // 上传完成操作
@@ -57,6 +59,12 @@ Page({
         }
       });
     })
+  },
+  beforeRead(e) {
+    console.log(e)
+    const { file, callback } = e.detail;
+    this.setData({ 'uploadParams.filename': file[0].path })
+    callback(true);
   },
   /**
    * @param {object} event event.detail.file: 当前读取的文件

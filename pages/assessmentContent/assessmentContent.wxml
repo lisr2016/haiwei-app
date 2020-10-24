@@ -11,7 +11,7 @@
  />
  <view class="upload">
   <view class="title">上传图片</view>
-  <van-uploader :border="{{ false }}" file-list="{{ fileList }}" bind:delete="deleteImg" multiple="{{true}}" bind:after-read="afterRead" />
+  <van-uploader :border="{{ false }}" bind:before-read="beforeRead" use-before-read="{{ true }}" file-list="{{ fileList }}" bind:delete="deleteImg" multiple="{{true}}" bind:after-read="afterRead" />
  </view>
 
  <view class="footer">
