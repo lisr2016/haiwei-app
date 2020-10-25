@@ -19,7 +19,7 @@ function getWeeks(){
   while(dayjs().isAfter(FridayStart)){
     let end = dayjs(FridayStart).add(6, 'day');
     result.push({
-      timestamp: dayjs(FridayStart).unix(),
+      timestamp: dayjs(FridayStart).valueOf(),
       start:`${dayjs(FridayStart).year()}年${dayjs(FridayStart).month() + 1}月${dayjs(FridayStart).date()}日`,
       end:`${dayjs(end).year()}年${dayjs(end).month() + 1}月${dayjs(end).date()}日`
     });

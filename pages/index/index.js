@@ -56,7 +56,7 @@ Page({
       { label: '考核验证', url: '../assessmentList/assessmentList', icon: 'exchange', show: true },
       { label: '未读消息', url: '../message/message?type=1', icon: 'chat-o', show: true },
       { label: '已读消息', url: '../message/message?type=0', icon: 'comment-o', show: true },
-      { label: '政策发布', url: '../policyList/policyList', icon: 'records', show: true },
+      { label: '政策文件', url: '../policyList/policyList', icon: 'records', show: true },
     ].filter(item => item.show)
     this.setData({ card })
   },
