@@ -31,11 +31,7 @@ Page({
   input(e) {
     this.setData({ 'form.description': e.detail });
   },
-  /**
-   * @param {string} uploadFile 需要上传的文件
-   * @description 上传到指定服务器
-   * @return {Promise} 上传图片的promise
-   */
+
   uploadFile(uploadFile) {
     return new Promise((resolve, reject) => {
       wx.uploadFile({
@@ -47,8 +43,7 @@ Page({
         success: (res) => {
           // 上传完成操作
           const data = JSON.parse(res.data)
-          console.log(data)
-          const url = data.data
+          const url = data.data[0].Url
           resolve({
             url
           })
@@ -75,12 +70,12 @@ Page({
       title: '上传中...'
     })
     const { file } = event.detail //获取所需要上传的文件列表
-    console.log(file)
     let uploadPromiseTask = [] //定义上传的promise任务栈
     for (let i = 0;i < file.length;i++) {
       uploadPromiseTask.push(this.uploadFile(file[i].path)) //push进每一张所需要的上传的图片promise栈
     }
     Promise.all(uploadPromiseTask).then(res => {
+
       //全部上传完毕
       this.setData({
         fileList: this.data.fileList.concat(res)
@@ -110,7 +105,6 @@ Page({
 
   submit() {
     this.setData({ 'form.urls': this.data.fileList.map(item => item.url) })
-    console.log(this.data.form.description)
     // if (!this.data.form.urls.length) return Toast({ type: 'fail', context: this, message: '请上传图片' })
     if (!this.data.form.description) return Toast({ type: 'fail', context: this, message: '请填写评价' });
 
