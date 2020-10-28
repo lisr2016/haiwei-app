@@ -15,16 +15,16 @@ const formatNumber = n => {
 
 function getWeeks(){
   let result = [];
-  let FridayStart = dayjs('2020-09-04');
-  while(dayjs().isAfter(FridayStart)){
-    let end = dayjs(FridayStart).add(6, 'day');
+  let WeekStart = dayjs('2020-10-19');
+  while(dayjs().isAfter(WeekStart)){
+    let end = dayjs(WeekStart).add(6, 'day');
     result.push({
-      timestamp: dayjs(FridayStart).valueOf(),
-      start:`${dayjs(FridayStart).year()}年${dayjs(FridayStart).month() + 1}月${dayjs(FridayStart).date()}日`,
+      timestamp: dayjs(WeekStart).valueOf(),
+      start:`${dayjs(WeekStart).year()}年${dayjs(WeekStart).month() + 1}月${dayjs(WeekStart).date()}日`,
       end:`${dayjs(end).year()}年${dayjs(end).month() + 1}月${dayjs(end).date()}日`
     });
-    FridayStart = dayjs(FridayStart).add(7, 'day');
-
+    WeekStart = dayjs(WeekStart).add(7, 'day');
+    
   }
   return result;
 }
