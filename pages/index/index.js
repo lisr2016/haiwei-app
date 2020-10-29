@@ -52,7 +52,7 @@ Page({
   checkList(type) {
     const card = [
       { label: '生活垃圾', url: '../lifeRubbish/lifeRubbish', icon: 'delete', show: type !== '3' },
-      { label: '医疗垃圾', url: '../medicineRubbish/medicineRubbish', icon: 'qr', show: type !== '2' },
+      { label: '医疗垃圾', url: '../medicineRubbish/medicineRubbish', icon: '/public/icons/medic_waste.jpeg', show: type !== '2' },
       { label: '考核验证', url: '../assessmentList/assessmentList', icon: 'exchange', show: true },
       { label: '未读消息', url: '../message/message?type=1', icon: 'chat-o', show: true },
       { label: '已读消息', url: '../message/message?type=0', icon: 'comment-o', show: true },
