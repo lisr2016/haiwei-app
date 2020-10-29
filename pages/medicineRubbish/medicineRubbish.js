@@ -6,7 +6,7 @@ Page({
     form: { time: new Date().getTime(), totalWeight: '' },
     show: false,
     minDate: new Date("2020/01/01 00:00:00").getTime(),
-    maxDate: new Date().getTime() + 28800009
+    maxDate: new Date().getTime()
   },
   input(e) {
     const inputModel = e.currentTarget.dataset.name;

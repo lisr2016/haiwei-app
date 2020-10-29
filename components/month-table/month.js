@@ -6,7 +6,7 @@ Component({
     form: { time: new Date().getTime(), kitchenWaste: '', recyclableWaste: '', harmfulWaste: '', bulkyWaste: '', otherWaste: '' },
     show: false,
     minDate: new Date("2020/01/01 00:00:00").getTime(),
-    maxDate: new Date().getTime() + 28800009,
+    maxDate: new Date().getTime(),
   },
   ready() {
 
