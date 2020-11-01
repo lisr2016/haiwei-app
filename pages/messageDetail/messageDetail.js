@@ -12,7 +12,7 @@ Page({
   jump() {
     const mock = {
       '2': `../lifeRubbish/lifeRubbish?type=0`,
-      '3': `../lifeRubbish/lifeRubbish?type=1}`,
+      '3': `../lifeRubbish/lifeRubbish?type=1`,
       '4': `../lifeRubbish/lifeRubbish?type=2`,
       '5': `../medicineRubbish/medicineRubbish`,
     }
