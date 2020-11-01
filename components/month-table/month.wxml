@@ -14,7 +14,7 @@
   </view>
 
   <van-popup show="{{ show }}" position="bottom" custom-style="height: 50%" bind:close="dateClose">
-    <van-datetime-picker type="year-month" min-date="{{ minDate }}" value="{{ form.time }}" title="请选择填报日期" bind:confirm="dateConfirm" bind:cancel="dateClose" />
+    <van-datetime-picker type="year-month"  max-date = "{{ maxDate }}" min-date="{{ minDate }}" value="{{ form.time }}" title="请选择填报日期" bind:confirm="dateConfirm" bind:cancel="dateClose" />
   </van-popup>
 
   <view class="footer">
