@@ -1,10 +1,10 @@
 <view wx:if="{{ list.length }}" class="policy-list">
   <view class="content">
     <view wx:for="{{ list }}" wx:key="index" class="item van-hairline--bottom" data-url="{{item.url}}" bindtap="jump">
-      <view class="title ">{{ item.title }}</view>
+      <view class="title van-ellipsis">{{ item.title }}</view>
       <view class="time">
-        <view>{{ item.content }}</view>
-        <view>{{ item.createTime }}</view>
+        <view class="van-ellipsis time-content">{{ item.content }}</view>
+        <view class="van-ellipsis">{{ item.createTime }}</view>
       </view>
     </view>
   </view>

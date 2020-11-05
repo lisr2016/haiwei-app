@@ -24,3 +24,6 @@
   display: flex;
   justify-content: space-between;
 }
+.policy-list .content .item .time .time-content {
+  width: 70%;
+}
