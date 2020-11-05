@@ -14,7 +14,8 @@
   <view class="content">
     <van-cell-group>
       <van-cell wx:for="{{ detail.content }}" title="{{ item }}" wx:key="index" center>
-        <van-button size="mini" data-index="{{ index }}" bindtap="solve">处理</van-button>
+        <van-button wx:if="{{ detail.params[index].description }}" color="#259D8F" size="mini" data-index="{{ index }}" bindtap="solve">已处理</van-button>
+        <van-button wx:else size="mini" data-index="{{ index }}" bindtap="solve">处理</van-button>
       </van-cell>
     </van-cell-group>
   </view>

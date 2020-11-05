@@ -5,7 +5,7 @@ Page({
   data: {
     detail: null
   },
-  onLoad() {
+  onShow() {
     this.setData({ detail: wx.getStorageSync('currentAssessment') })
   },
   solve(e) {

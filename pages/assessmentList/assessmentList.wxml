@@ -7,4 +7,4 @@
   </view>
 
 </view>
-<van-empty wx:else description="暂无数据" />
+<van-empty wx:else description="所有考核都已完成" />
