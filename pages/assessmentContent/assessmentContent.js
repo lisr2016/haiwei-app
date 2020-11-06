@@ -112,6 +112,14 @@ Page({
     currentAssessment['params'][this.data.index] = this.data.form
     this.setData({ currentAssessment })
     wx.setStorageSync('currentAssessment', currentAssessment);
-    wx.navigateBack()
+    Toast({
+      type: 'success',
+      context: this,
+      message: '处理成功！',
+      onClose: () => {
+        wx.navigateBack()
+      }
+    })
+
   }
 });

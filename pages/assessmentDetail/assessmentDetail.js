@@ -25,9 +25,15 @@ Page({
       }
     })
     if (on) {
-      ajax('/v1/upload/assess', { content: params, id, type }, 'post').then(res => {
-        Toast({ type: 'success', context: this, message: '提交成功' })
-        wx.navigateTo({ url: '../assessmentList/assessmentList'})
+      ajax('/v1/upload/assess', { content: params, id, type }, 'post').then(() => {
+        Toast({
+          type: 'success',
+          context: this,
+          message: '提交成功',
+          onClose: () => {
+            wx.navigateTo({ url: '../assessmentList/assessmentList'})
+          }
+        })
       })
     }
   }
