@@ -28,6 +28,9 @@
   color: #666;
   margin-right: 15px;
 }
+.week-table .bottom {
+  height: 70px;
+}
 .week-table .not-padding /deep/ .van-cell {
   padding: 10px 0;
 }

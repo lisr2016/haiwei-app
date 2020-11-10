@@ -26,7 +26,8 @@
       <van-field required title-width="160px" label="医疗废物投放收集容器:" bind:blur="input" data-name="medicWasteCollectors" type="number" value="{{ form.medicWasteCollectors }}" placeholder="个" border="{{ false }}" />
       <van-field required title-width="160px" label="医疗废物单位暂时存放点:" bind:blur="input" data-name="medicWastePositions" type="number" value="{{ form.medicWastePositions }}" placeholder="处" border="{{ false }}" />
       <van-field required title-width="160px" label="大件废弃物品堆放处:" bind:blur="input" data-name="bulkyWastePositions" type="number" value="{{ form.bulkyWastePositions }}" placeholder="处" border="{{ false }}" />
-      </view>
+    </view>
+    <view class="bottom" />
   </view>
 
   <view hidden="{{ active !== 2 }}">
