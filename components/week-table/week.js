@@ -61,7 +61,7 @@ Component({
         const keys = Object.keys(this.data.form)
         let on = true
         keys.forEach(key => {
-          if(!this.data.form[key]) {
+          if(this.data.form[key] === '') {
             on = false
             Toast({ type: 'fail', context: this, message: '请检查表单是否输入完整！' })
           }
