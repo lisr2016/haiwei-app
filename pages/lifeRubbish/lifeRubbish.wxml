@@ -5,4 +5,5 @@
   <day-table wx:if="{{ active === 0 }}" />
   <week-table wx:if="{{ active === 1 }}" />
   <month-table wx:if="{{ active === 2 }}" />
+  <barrel-table wx:if="{{ active === 3 }}" />
 </view>

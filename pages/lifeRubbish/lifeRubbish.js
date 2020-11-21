@@ -7,6 +7,7 @@ Page({
       { label: '日报', id: 0 },
       { label: '周报', id: 1 },
       { label: '月报', id: 2 },
+      { label: '桶前值守', id: 3 },
     ],
   },
   onLoad: function (options) {
