@@ -51,17 +51,18 @@ Page({
   },
   checkList(type) {
     const card = [
-      { label: '生活垃圾', url: '../lifeRubbish/lifeRubbish', icon: 'delete', show: type !== '3' },
-      { label: '医疗垃圾', url: '../medicineRubbish/medicineRubbish', icon: '/public/icons/medic_waste.jpeg', show: type !== '2' },
-      { label: '考核验证', url: '../assessmentList/assessmentList', icon: 'exchange', show: true },
-      { label: '未读消息', url: '../message/message?type=1', icon: 'chat-o', show: true },
-      { label: '已读消息', url: '../message/message?type=0', icon: 'comment-o', show: true },
-      { label: '政策文件', url: '../policyList/policyList', icon: 'records', show: true },
-    ].filter(item => item.show)
+      { label: '生活垃圾', url: '../lifeRubbish/lifeRubbish', icon: '/public/icons/domestic_waste.png', show: type !== '3' && type !== '4'},
+      { label: '医疗垃圾', url: '../medicineRubbish/medicineRubbish', icon: '/public/icons/medic_waste2.png', show: type !== '2' && type !== '4'},
+      { label: '考核评价', url: '../assessmentList/assessmentList', icon: 'exchange', show: type !== '4'},
+      { label: '未读消息', url: '../message/message?type=1', icon: 'chat-o', show: type !== '4'},
+      { label: '已读消息', url: '../message/message?type=0', icon: 'comment-o', show: type !== '4'},
+      { label: '政策文件', url: '../policyList/policyList', icon: 'records', show: type !== '4'},
+      { label: '考核指派', url: '../assessment/assessment', icon: 'manager-o', show: type === '4'},
+    ].filter(item => item.show);
     this.setData({ card })
   },
   jump(e) {
-    const { url } = e.currentTarget.dataset.currentdata
+    const { url } = e.currentTarget.dataset.currentdata;
     wx.navigateTo({ url })
   },
   getUserInfo() {

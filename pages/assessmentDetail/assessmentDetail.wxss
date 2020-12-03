@@ -9,6 +9,17 @@
   color: #333333;
   padding-left: 12px;
 }
+.assessment-detail .subTitle {
+  height: 40px;
+  line-height: 40px;
+  font-size: 13px;
+  color: #333333;
+  padding-left: 13px;
+  margin-bottom: 13px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 .assessment-detail .content {
   margin-bottom: 60px;
 }

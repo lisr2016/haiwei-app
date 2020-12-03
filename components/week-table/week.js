@@ -34,7 +34,7 @@ Component({
   ready() {
     const week = []
     getWeeks().forEach(item => {
-      week.push({ label: `${item.start}到${item.end}`, value: item.timestamp })
+      week.push({ label: `${item.friday}`, value: item.timestamp })
     })
     this.setData({ week: week.reverse() })
   },

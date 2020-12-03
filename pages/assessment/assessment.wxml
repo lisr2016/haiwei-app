@@ -1,0 +1,39 @@
+<wxs module="filter" src="../../utils/util.wxs" />
+<view class="month-table">
+  <view>
+    <van-field class="not-padding" required label="指派日期" value="{{ filter.formatTime(form.time) }}" placeholder="请选择日期" readonly clickable is-link border="{{ false }}" bindtap="showDate" />
+
+    <view class="title">请选择机构</view>
+        <van-field
+          value="{{ organization }}"
+          type="text"
+          left-icon="friends-o"
+          right-icon="search"
+          placeholder="请输入机构关键词"
+          bind:input="organizationInput"
+          class="item"
+          bind:click-icon="search"
+        />
+  </view>
+
+
+
+  <van-popup show="{{ show }}" position="bottom" custom-style="height: 50%" bind:close="dateClose">
+    <van-datetime-picker type="date" max-date = "{{ maxDate }}" min-date="{{ minDate }}" value="{{ form.time }}" title="请选择填报日期" bind:confirm="dateConfirm" bind:cancel="dateClose" />
+  </van-popup>
+
+      <van-popup show="{{ showSearch }}" position="bottom" custom-style="height: 50%" bind:close="searchClose">
+        <van-picker
+          show-toolbar
+          title="请选择机构"
+          columns="{{ columns }}"
+          bind:cancel="searchClose"
+          bind:confirm="onConfirm"
+        />
+      </van-popup>
+
+  <view class="footer">
+    <van-button class="btn" color="#259D8F" type="info" block bindtap="submit">提交</van-button>
+  </view>
+  <van-toast id="van-toast" />
+</view>

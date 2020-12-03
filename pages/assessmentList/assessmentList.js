@@ -12,7 +12,7 @@ Page({
   jump(e) {
     const index = e.currentTarget.dataset.index
     const data = this.data.list[index]
-    wx.setStorageSync('currentAssessment', Object.assign({}, data, { params: data.content.map(() => ({ description: '', urls: [] })) }));
+    wx.setStorageSync('currentAssessment', Object.assign({}, data));
     wx.navigateTo({ url: '../assessmentDetail/assessmentDetail'})
   },
 })
