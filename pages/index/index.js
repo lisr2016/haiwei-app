@@ -57,6 +57,7 @@ Page({
       { label: '未读消息', url: '../message/message?type=1', icon: 'chat-o', show: true },
       { label: '已读消息', url: '../message/message?type=0', icon: 'comment-o', show: true },
       { label: '政策文件', url: '../policyList/policyList', icon: 'records', show: true },
+      { label: '历史报告', url: '../historyReport/historyReport', icon: 'records', show: true },
     ].filter(item => item.show)
     this.setData({ card })
   },

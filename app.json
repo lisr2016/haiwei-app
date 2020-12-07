@@ -13,7 +13,8 @@
     "pages/messageDetail/messageDetail",
     "pages/policyList/policyList",
     "pages/assessmentDetail/assessmentDetail",
-    "pages/assessmentContent/assessmentContent"
+    "pages/assessmentContent/assessmentContent",
+    "pages/historyReport/historyReport"
   ],
   "usingComponents": {
     "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
