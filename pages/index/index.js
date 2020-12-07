@@ -13,6 +13,7 @@ Page({
   },
   onLoad: async function () {
     const user = wx.getStorageSync('user');
+    wx.setNavigationBarTitle({ title: user.name })
     if (!user) {
       this.getUserInfo().then(res => {
         if (res && res.orgInfo) {
