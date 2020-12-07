@@ -3,7 +3,7 @@ import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast'
 
 Component({
   data: {
-    form: { time: new Date().getTime(), kitchenWaste: '', recyclableWaste: '', harmfulWaste: '', bulkyWaste: '', otherWaste: '' },
+    form: { time: new Date().getTime(), personCountOnDuty: '' },
     show: false,
     minDate: new Date("2020/01/01 00:00:00").getTime(),
     maxDate: new Date().getTime(),
@@ -42,7 +42,7 @@ Component({
         }
       })
       if (on) {
-        ajax('/v1/domestic/monthly', params, 'post').then(() => {
+        ajax('/v1/barrel/monthly', params, 'post').then(() => {
           Toast({
             type: 'success',
             context: this,

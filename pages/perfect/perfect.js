@@ -35,7 +35,7 @@ Page({
       '苏家坨地区',
       '上庄地区'
     ],
-    levelValues: ['三级医院','二级医院','一级医院','门诊部','诊所','未定级','医务室','卫生室','社区卫生服务中心','社区卫生服务站'],
+    levelValues: ['三级医院','二级医院','一级医院','门诊部','诊所','未定级','医务室','卫生室', '社区卫生服务中心（区属）',  '社区卫生服务中心（非区属）','社区卫生服务站'],
     isLevel: true,
     show: false,
     name: ''
@@ -56,8 +56,15 @@ Page({
     if (!this.data.form.address) return Toast.fail('请输入地址');
     if (!this.data.form.level) return Toast.fail('请输入级别');
     if (!this.data.form.street) return Toast.fail('请输入街道');
-
-    const params =  Object.assign({}, this.data.form, { level: String(this.data.levelValues.findIndex(item => item === this.data.form.level) + 1) })
+    let omitObj = {
+      managerPhone: this.data.form.managerPhone,
+      address: this.data.form.address,
+      level: this.data.form.level,
+      street: this.data.form.street
+    }
+    if (this.data.form.street) omitObj.street = this.data.form.street
+    if (this.data.form.bednum) omitObj.bednum = this.data.form.bednum
+    const params =  Object.assign({}, omitObj, { level: String(this.data.levelValues.findIndex(item => item === this.data.form.level) + 1) })
     ajax('/v1/init/org/info', params, 'post').then(() => {
       const user = wx.getStorageSync('user');
       wx.setStorageSync('user', Object.assign({}, user, { initialized: true }));

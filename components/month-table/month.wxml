@@ -1,7 +1,7 @@
 <wxs module="filter" src="../../utils/util.wxs" />
 <view class="month-table">
   <view>
-    <van-field required class="not-padding" label="填报日期" value="{{ filter.formatTime(form.time, false) }}" placeholder="请选择填报日期" readonly clickable is-link border="{{ false }}" bindtap="showDate" />
+    <van-field required class="not-padding" label="填报月份" value="{{ filter.formatTime(form.time, false) }}" placeholder="请选择填报日期" readonly clickable is-link border="{{ false }}" bindtap="showDate" />
 
     <view class="title">{{ filter.getMonth(form.time) }}月垃圾收集情况</view>
     <view class="card">
@@ -14,7 +14,7 @@
   </view>
 
   <van-popup show="{{ show }}" position="bottom" custom-style="height: 50%" bind:close="dateClose">
-    <van-datetime-picker type="year-month"  max-date = "{{ maxDate }}" min-date="{{ minDate }}" value="{{ form.time }}" title="请选择填报日期" bind:confirm="dateConfirm" bind:cancel="dateClose" />
+    <van-datetime-picker type="year-month"  max-date = "{{ maxDate }}" min-date="{{ minDate }}" value="{{ form.time }}" title="请选择填报月份" bind:confirm="dateConfirm" bind:cancel="dateClose" />
   </van-popup>
 
   <view class="footer">

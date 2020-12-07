@@ -3,10 +3,10 @@
   <view>
     <van-field required class="not-padding" label="填报月份" value="{{ filter.formatTime(form.time, false) }}" placeholder="请选择填报日期" readonly clickable is-link border="{{ false }}" bindtap="showDate" />
 
-    <view class="title">{{ filter.getMonth(form.time) }}月医疗垃圾收集情况</view>
+    <view class="title">{{ filter.getMonth(form.time) }}月桶前值守情况</view>
     <view class="card">
-      <van-field title-width="130px" required label="月医疗垃圾产量:" bind:blur="input" data-name="totalWeight" type="number" value="{{ form.totalWeight }}" placeholder="请输入月医疗垃圾产量" border="{{ false }}" />
-    </view>
+      <van-field required label="值守人数:" bind:blur="input" data-name="personCountOnDuty" type="number" value="{{ form.personCountOnDuty }}" placeholder="人数" border="{{ false }}" />
+     </view>
   </view>
 
   <van-popup show="{{ show }}" position="bottom" custom-style="height: 50%" bind:close="dateClose">
