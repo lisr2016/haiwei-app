@@ -58,7 +58,7 @@ Page({
       { label: '已读消息', url: '../message/message?type=0', icon: 'comment-o', show: type !== '4'},
       { label: '政策文件', url: '../policyList/policyList', icon: 'records', show: type !== '4'},
       { label: '考核指派', url: '../assessment/assessment', icon: 'manager-o', show: type === '4'},
-      { label: '历史报告', url: '../historyReport/historyReport', icon: 'records', show: true },
+      { label: '历史报告', url: '../historyReport/historyReport', icon: 'orders-o', show: type !== '4' },
     ].filter(item => item.show);
     this.setData({ card })
   },

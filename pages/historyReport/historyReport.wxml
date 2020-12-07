@@ -1,1 +1,3 @@
-<view class="history-report">历史报表</view>
+<view class="history-report">
+    <van-cell wx:for="{{ tabs }}" wx:key="index" title="{{ item.label }}" clickable bind:click="jump" data-type="{{ item.id }}" is-link />
+</view>

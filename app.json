@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/historyReport/historyReport",
     "pages/index/index",
     "pages/assessmentList/assessmentList",
     "pages/QuantifyTable/QuantifyTable",
@@ -14,7 +15,8 @@
     "pages/policyList/policyList",
     "pages/assessmentDetail/assessmentDetail",
     "pages/assessmentContent/assessmentContent",
-    "pages/historyReport/historyReport"
+    "pages/reportList/reportList",
+    "pages/reportDetail/reportDetail"
   ],
   "usingComponents": {
     "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",

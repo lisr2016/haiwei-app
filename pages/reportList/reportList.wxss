@@ -1,0 +1,4 @@
+.report-list {
+  min-height: 100vh;
+  background: #eeeeee;
+}

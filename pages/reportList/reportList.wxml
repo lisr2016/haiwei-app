@@ -1,0 +1,5 @@
+<wxs module="filter" src="../../utils/util.wxs" />
+<view wx:if="{{ list.length }}" class="report-list">
+    <van-cell wx:for="{{ list }}" wx:key="index" title="{{ filter.formatTime(item.time) }}报告" clickable bind:click="jump" data-type="{{ index }}" is-link />
+</view>
+<van-empty wx:else description="暂无报告" />

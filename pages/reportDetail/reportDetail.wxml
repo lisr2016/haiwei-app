@@ -1,0 +1,3 @@
+<view class="report-detail">
+    <van-cell wx:for="{{ info }}" wx:key="index" title="{{ item.label }}" clickable value="{{ detail[item.value] }}{{ item.unit }}" />
+</view>
