@@ -15,6 +15,7 @@
     />
     <van-field
       value="{{ form.password }}"
+      wx:if="{{ isPassword === true }}"
       type="{{ isClosed ? 'password' : 'text' }}"
       left-icon="browsing-history-o"
       right-icon="{{ isClosed ? 'closed-eye' : 'eye-o' }}"
@@ -26,6 +27,7 @@
     />
     <van-field
       value="{{ form.verifyCode }}"
+      wx:if="{{ isPassword === false }}"
       type="number"
       left-icon= "bulb-o"
       placeholder="请输入验证码"
@@ -38,6 +40,8 @@
     </van-field>
   </van-cell-group>
   <van-button round color="#259D8F" size="large" block class='login-btn btn' bindtap="login">登录</van-button>
+  <view class="register-text" bindtap="changeMethod" wx:if="{{ isPassword === true }}" >验证码登陆</view>
+  <view class="register-text" bindtap="changeMethod" wx:if="{{ isPassword === false }}" >密码登陆</view>
   <view class="register-text" bindtap="register">暂无账号，去注册</view>
   <van-toast id="van-toast" />
 </view>

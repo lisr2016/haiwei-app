@@ -7,14 +7,20 @@ Page({
         if (option && option.type) {
             const info = [
                 // 生活垃圾日报
-                { label: '开展生活垃圾分类管理工作会议次数', id: 'meetingTimes', unit: '次', value: 'meeting_times', show: option.type === '1' },
+                { label: '生活垃圾分类管理工作会议次数', id: 'meetingTimes', unit: '次', value: 'meeting_times', show: option.type === '1' },
+                { label: '生活垃圾分类会议主持人', id: 'meetingHost', unit: '', value: 'meeting_host', show: option.type === '1' },
+                { label: '生活垃圾分类会议具体事项', id: 'meetingContent', unit: '', value: 'meeting_content', show: option.type === '1' },
                 { label: '自测、巡查次数', id: 'selfInspectionTimes', value: 'self_inspection_times', unit: '次', show: option.type === '1' },
                 { label: '发现存在问题', id: 'selfInspectionProblems', value: 'self_inspection_problems', unit: '个', show: option.type === '1' },
+                { label: '主要涉及问题', id: 'selfInspectionContent', value: 'self_inspection_content', unit: '', show: option.type === '1' },
                 { label: '宣传次数', id: 'advertiseTimes', unit: '次', value: 'advertise_times', show: option.type === '1' },
+                { label: '宣传内容', id: 'advertiseContent', unit: '次', value: 'advertise_content', show: option.type === '1' },
                 { label: '培训人数', id: 'trainees', unit: '人', value: 'trainees', show: option.type === '1', },
                 { label: '培训次数', id: 'traningTimes', unit: '次', value: 'traning_times', show: option.type === '1', },
-                { label: '开展检查次数', id: 'govInspectionTimes', unit: '次', value: 'gov_inspection_times', show: option.type === '1', },
+                { label: '培训内容', id: 'traningContent', unit: '', value: 'traning_content', show: option.type === '1' },
+                { label: '配合相关部门、政府开展检查次数', id: 'govInspectionTimes', unit: '次', value: 'gov_inspection_times', show: option.type === '1', },
                 { label: '发现存在问题个数', id: 'govInspectionProblems', unit: '个', value: 'gov_inspection_problems', show: option.type === '1', },
+                { label: '主要涉及问题', id: 'govInspectionContent', value: 'gov_inspection_content', unit: '', show: option.type === '1' },
                 
                 // 周报
                 { label: '专兼职收运人员', id: 'consignee', unit: '人', value: 'consignee', show: option.type === '2', },
