@@ -18,6 +18,13 @@ function ajax(url,data,method, all = false, header = { token: wx.getStorageSync(
           if (obj.data.code === 0) {
             resolve(all ? obj : obj.data.data)
           }
+          if (obj.data.code === 501) {
+            wx.showToast({ title: '登录过期，请重新登录', icon: 'none' })
+            wx.removeStorageSync('token')
+            wx.removeStorageSync('user')
+            wx.navigateTo({ url: '/pages/Login/Login' })
+            reject(null);
+          }
         } else {
           wx.showToast({ title: obj.data.msg, icon: 'loading' })
           reject(obj.data);
