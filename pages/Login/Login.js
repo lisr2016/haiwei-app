@@ -8,6 +8,7 @@ Page({
       password: '',
       verifyCode:''
     },
+    isPassword: true,
     checked: false,
     isCheck: false,
     isClosed: true,
@@ -15,7 +16,7 @@ Page({
     isCode: true,
   },
   onLoad() {
-    const account = wx.getStorageSync('account')
+    const account = wx.getStorageSync('account');
     if (account) {
       this.setData({
         'form.phone': account.phone,
@@ -42,14 +43,14 @@ Page({
 
     ajax('/get/verifyCode', { phone: this.data.form.phone }, 'get', true ).then(res => {
       Toast.success('验证码已发送至您手机，请注意查收');
-      wx.setStorageSync("sessionid", res.header["Set-Cookie"])
-      let num = 60
+      wx.setStorageSync("sessionid", res.header["Set-Cookie"]);
+      let num = 60;
       const timer = setInterval(() => {
         if (num === 1) {
-          this.setData({ codeText: '重新发送', isCode: true })
+          this.setData({ codeText: '重新发送', isCode: true });
           clearInterval(timer)
         } else {
-          num -= 1
+          num -= 1;
           this.setData({ codeText: num + 's后重发', isCode: false })
         }
       }, 1000)
@@ -61,6 +62,11 @@ Page({
     const value = e.detail.value;
     this.setData({ [`form.${inputModel}`]: value });
   },
+  
+  changeMethod(e) {
+    this.setData({ isPassword: !this.data.isPassword });
+  },
+  
   // change(e) {
   //   if (e.detail.length === 4) {
   //     ajax('/check/verifyCode', { phone: this.data.form.phone, verifyCode: e.detail }, 'get', false, { cookie: wx.getStorageSync("sessionid") }).then(() => {
@@ -71,8 +77,8 @@ Page({
   // 登录
   login() {
     if (!this.data.form.phone) return Toast.fail('请输入手机号');
-    if (!this.data.form.password) return Toast.fail('请输入密码');
-    if (!this.data.form.verifyCode) return Toast.fail('请输入验证码');
+    if (this.data.isPassword && !this.data.form.password) return Toast.fail('请输入密码');
+    if (!this.data.isPassword && !this.data.form.verifyCode) return Toast.fail('请输入验证码');
 
     // // 如果选择记住密码
     // if (this.data.checked) {
@@ -81,11 +87,11 @@ Page({
     // }
 
     ajax('/login', this.data.form, 'post', false, { cookie: wx.getStorageSync("sessionid") }).then(res => {
-      wx.setStorageSync('token', res.token)
+      wx.setStorageSync('token', res.token);
       wx.navigateTo({ url: `/pages/index/index` })
     })
   },
   register() {
     wx.navigateTo({ url: `/pages/register/register` })
   }
-})
+});
