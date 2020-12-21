@@ -4,8 +4,8 @@ import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
 Page({
   data: {
     detail:null,
-    redio: '0',
-    redio2: '0',
+    redio: '1',
+    redio2: '1',
     fileListA1: [],
     fileListA2: [],
     fileListA3: [],
@@ -119,10 +119,18 @@ Page({
 
   changeRedio(e) {
     this.setData({ redio: e.detail.value })
+    if (e.detail.value === '0') {
+      this.data.contents.b4.value = '1';
+      this.data.contents.b5.value = '1';
+    }
   },
 
   changeRedio2(e) {
     this.setData({ redio2: e.detail.value })
+    if (e.detail.value === '0') {
+      this.data.contents.e1.value = '1';
+      this.data.contents.e2.value = '1';
+    }
   },
   
   radioChangeA1: function(e) {
