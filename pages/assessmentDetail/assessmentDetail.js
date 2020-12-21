@@ -106,7 +106,15 @@ Page({
     typeD: [
       {name: '1', value: '明确'},
       {name: '0', value: '不明确'},
-    ]
+    ],
+    typeE: [
+      {name: '1', value: '是'},
+      {name: '0', value: '否(4分)'},
+    ],
+    typeF: [
+      {name: '1', value: '是'},
+      {name: '0', value: '否(3分)'},
+    ],
   },
 
   changeRedio(e) {

@@ -85,15 +85,15 @@
               <view class="title">上传图片</view>
               <van-uploader :border="{{ false }}"  file-list="{{ fileListB3 }}" bind:delete="deleteImg" multiple="{{true}}" bind:after-read="afterReadB3" />
              </view>
-        
-        <view class="subTitle" style="height: 40px">4)是否有厨房(4分)</view>
+
+        <view class="subTitle" style="height: 40px">是否有厨房</view>
         <radio-group class="radio-group" bindchange="changeRedio" style="margin-left: 14px">
-            <label class="radio" wx:for-items="{{typeB}}" wx:key="key">
+            <label class="radio" wx:for-items="{{typeE}}" wx:key="key">
                 <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
             </label>
         </radio-group>
         <view wx:if="{{ redio === '1' }}">
-            <view class="subTitle" style="height: 80px;">4.1)食品加工区设置厨余垃圾、其他垃圾容器，配置油水分离装置(2分)</view>
+            <view class="subTitle" style="height: 80px;">4)食品加工区设置厨余垃圾、其他垃圾容器，配置油水分离装置(2分)</view>
             <radio-group class="radio-group" bindchange="radioChangeB4" style="margin-left: 14px">
                 <label class="radio" wx:for-items="{{typeB}}" wx:key="key">
                     <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
@@ -103,7 +103,7 @@
             <view class="title">上传图片</view>
                 <van-uploader :border="{{ false }}" file-list="{{ fileListB4 }}" bind:delete="deleteImg" multiple="{{true}}" bind:after-read="afterReadB4" />
             </view>
-            <view class="subTitle" style="height: 80px;">4.2)集中用餐区设置厨余垃圾、其他垃圾收集容器(2分)</view>
+            <view class="subTitle" style="height: 80px;">5)集中用餐区设置厨余垃圾、其他垃圾收集容器(2分)</view>
             <radio-group class="radio-group" bindchange="radioChangeB5" style="margin-left: 14px">
                 <label class="radio" wx:for-items="{{typeB}}" wx:key="key">
                     <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
@@ -226,7 +226,7 @@
               <view class="title">上传图片</view>
               <van-uploader :border="{{ false }}"  file-list="{{ fileListD1 }}" bind:delete="deleteImg" multiple="{{true}}" bind:after-read="afterReadD1" />
              </view>
-        <view class="subTitle" style="height: 80px;">>2)有明确的工作标准，能够体现“管理精细、数据精准、问题精确”(1分)</view>
+        <view class="subTitle" style="height: 80px;">2)有明确的工作标准，能够体现“管理精细、数据精准、问题精确”(1分)</view>
                     <radio-group class="radio-group" bindchange="radioChangeD2" style="margin-left: 14px">
                         <label class="radio" wx:for-items="{{typeB}}" wx:key="key">
                         <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
@@ -257,14 +257,14 @@
               <van-uploader :border="{{ false }}"  file-list="{{ fileListD4 }}" bind:delete="deleteImg" multiple="{{true}}" bind:after-read="afterReadD3" />
              </view>
         <view class="title">五、严禁混装、混运实现率</view>
-        <view class="subTitle" style="height: 40px;">1)是否有病房(3分)</view>
+        <view class="subTitle" style="height: 40px;">是否有病房</view>
         <radio-group class="radio-group" bindchange="changeRedio2" style="margin-left: 14px">
-            <label class="radio" wx:for-items="{{typeA}}" wx:key="key">
+            <label class="radio" wx:for-items="{{typeF}}" wx:key="key">
                 <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
             </label>
         </radio-group>
         <view wx:if="{{ redio2 === '1' }}">
-            <view class="subTitle" style="height: 40px;">1.1)做好一进一出“两桶一袋”进病房(1分)</view>
+            <view class="subTitle" style="height: 40px;">1)做好一进一出“两桶一袋”进病房(1分)</view>
                 <radio-group class="radio-group" bindchange="radioChangeE1" style="margin-left: 14px">
                     <label class="radio" wx:for-items="{{typeA}}" wx:key="key">
                         <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
@@ -274,7 +274,7 @@
             <view class="title">上传图片</view>
                 <van-uploader :border="{{ false }}"  file-list="{{ fileListE1 }}" bind:delete="deleteImg" multiple="{{true}}" bind:after-read="afterReadE1" />
             </view>
-            <view class="subTitle" style="height: 40px;">1.2)医疗废物及时转运出病房(2分)</view>
+            <view class="subTitle" style="height: 40px;">2)医疗废物及时转运出病房(2分)</view>
                 <radio-group class="radio-group" bindchange="radioChangeE2" style="margin-left: 14px">
                     <label class="radio" wx:for-items="{{typeB}}" wx:key="key">
                         <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
@@ -285,7 +285,7 @@
                 <van-uploader :border="{{ false }}"  file-list="{{ fileListE2 }}" bind:delete="deleteImg" multiple="{{true}}" bind:after-read="afterReadE2" />
              </view>
         </view>
-        <view class="subTitle" style="height: 80px;">2)管好“一个棉球和一个输液袋”进一步加强医疗废物监管(5分)</view>
+        <view class="subTitle" style="height: 80px;">3)管好“一个棉球和一个输液袋”进一步加强医疗废物监管(5分)</view>
                     <radio-group class="radio-group" bindchange="radioChangeE3" style="margin-left: 14px">
                         <label class="radio" wx:for-items="{{typeB}}" wx:key="key">
                         <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
@@ -295,7 +295,7 @@
               <view class="title">上传图片</view>
               <van-uploader :border="{{ false }}"  file-list="{{ fileListE3 }}" bind:delete="deleteImg" multiple="{{true}}" bind:after-read="afterReadE3" />
              </view>
-        <view class="subTitle" style="height: 40px;">3)引导患者行为，自觉遵守垃圾分类规定(2分)</view>
+        <view class="subTitle" style="height: 40px;">4)引导患者行为，自觉遵守垃圾分类规定(2分)</view>
                     <radio-group class="radio-group" bindchange="radioChangeE4" style="margin-left: 14px">
                         <label class="radio" wx:for-items="{{typeB}}" wx:key="key">
                         <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
@@ -305,7 +305,7 @@
               <view class="title">上传图片</view>
               <van-uploader :border="{{ false }}"  file-list="{{ fileListE4 }}" bind:delete="deleteImg" multiple="{{true}}" bind:after-read="afterReadE4" />
              </view>
-        <view class="subTitle" style="height: 40px;">4)生活垃圾分类桶内无混装混放(5分)</view>
+        <view class="subTitle" style="height: 40px;">5)生活垃圾分类桶内无混装混放(5分)</view>
                     <radio-group class="radio-group" bindchange="radioChangeE5" style="margin-left: 14px">
                         <label class="radio" wx:for-items="{{typeA}}" wx:key="key">
                         <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
@@ -315,7 +315,7 @@
               <view class="title">上传图片</view>
               <van-uploader :border="{{ false }}"  file-list="{{ fileListE5 }}" bind:delete="deleteImg" multiple="{{true}}" bind:after-read="afterReadE4" />
              </view>
-        <view class="subTitle" style="height: 40px;">5)严禁生活垃圾和医疗废物混装混运(5分)</view>
+        <view class="subTitle" style="height: 40px;">6)严禁生活垃圾和医疗废物混装混运(5分)</view>
                     <radio-group class="radio-group" bindchange="radioChangeE6" style="margin-left: 14px">
                         <label class="radio" wx:for-items="{{typeA}}" wx:key="key">
                         <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
