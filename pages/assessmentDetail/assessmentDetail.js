@@ -4,6 +4,8 @@ import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast';
 Page({
   data: {
     detail:null,
+    redio: '0',
+    redio2: '0',
     fileListA1: [],
     fileListA2: [],
     fileListA3: [],
@@ -105,6 +107,14 @@ Page({
       {name: '1', value: '明确'},
       {name: '0', value: '不明确'},
     ]
+  },
+
+  changeRedio(e) {
+    this.setData({ redio: e.detail.value })
+  },
+
+  changeRedio2(e) {
+    this.setData({ redio2: e.detail.value })
   },
   
   radioChangeA1: function(e) {
