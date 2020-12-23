@@ -13,9 +13,9 @@ Page({
     const value = e.detail.value;
     this.setData({ [`form.${inputModel}`]: value });
   },
-  showDate() {
-    this.setData({ show: true, })
-  },
+  // showDate() {
+  //   this.setData({ show: true, })
+  // },
 
   dateConfirm(e) {
     this.setData({ 'form.time': e.detail, show: false })
