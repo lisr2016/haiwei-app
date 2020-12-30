@@ -1,9 +1,10 @@
 import { ajax } from '../../utils/http'
 import Toast from '../../miniprogram_npm/@vant/weapp/toast/toast'
+import dayjs from 'dayjs'
 
 Component({
   data: {
-    form: { time: new Date().getTime(), personCountOnDuty: '' },
+    form: { time: dayjs().add(-1, 'month').valueOf(), personCountOnDuty: '' },
     show: false,
     minDate: new Date("2020/01/01 00:00:00").getTime(),
     maxDate: new Date().getTime(),
